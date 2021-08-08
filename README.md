@@ -1,6 +1,8 @@
 # Biomass composition
 
-This is a web tool for estimating biomass composition from ultimate analysis data. The composition is for use with the Ranzi, Debiegi, et al. biomass pyrolysis kinetics scheme.
+This is a web tool for estimating biomass composition from ultimate analysis data. The composition is for use with the Ranzi, Debiagi, et al. biomass pyrolysis kinetics scheme.
+
+View the web app at https://share.streamlit.io/wigging/biocomp/main/app.py
 
 ## Installation
 
