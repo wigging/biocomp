@@ -6,12 +6,16 @@ import pandas as pd
 # Sidebar
 # ----------------------------------------------------------------------------
 
-st.sidebar.header('Parameters')
+st.sidebar.header('Ultimate analysis')
 
-yc = st.sidebar.number_input('Carbon', min_value=0.45, max_value=0.75, value=0.53)
-yh = st.sidebar.number_input('Hydrogen', min_value=0.04, max_value=0.11, value=0.06, step=0.001, format='%f')
-yh2o = st.sidebar.number_input('H₂O', min_value=0.01, max_value=0.30, value=0.02)
-yash = st.sidebar.number_input('ash', min_value=0.01, max_value=0.30, value=0.02)
+yc = st.sidebar.number_input('Carbon %', min_value=45.00, max_value=75.00, value=53.00, step=1.0)
+yh = st.sidebar.number_input('Hydrogen %', min_value=4.00, max_value=11.00, value=6.00, step=0.1)
+yh2o = st.sidebar.number_input('H₂O %', min_value=1.00, max_value=30.00, value=2.00, step=0.1)
+yash = st.sidebar.number_input('ash %', min_value=1.00, max_value=30.00, value=2.00, step=0.1)
+
+st.sidebar.header('Splitting parameters')
+
+st.sidebar.button('Optimize')
 
 alpha = st.sidebar.slider('α', 0.0, 1.0, 0.6)
 beta = st.sidebar.slider('β', 0.0, 1.0, 0.8)
@@ -32,6 +36,13 @@ st.markdown(
 col1, _ = st.columns([2, 1])
 
 with col1:
+    # Convert mass percent to mass fraction
+    yc = yc / 100
+    yh = yh / 100
+    yh2o = yh2o / 100
+    yash = yash / 100
+
+    # Plot biomass composition
     bc = cm.biocomp(yc, yh, yh2o=yh2o, yash=yash, alpha=alpha, beta=beta, gamma=gamma, delta=delta, epsilon=epsilon)
     fig, ax = plt.subplots()
     cm.plot_biocomp(ax, yc, yh, bc['y_rm1'], bc['y_rm2'], bc['y_rm3'])
