@@ -1,7 +1,7 @@
 import chemics as cm
 
 
-def objfunc(x, yc, yh, chem):
+def objfunc(x, yc, yh, ychem):
     """
     Objective function for determining the biomass composition splitting
     parameters by minimizing the difference between the estimated composition
@@ -15,8 +15,8 @@ def objfunc(x, yc, yh, chem):
         Mass fraction of carbon from ultimate analysis CHO basis
     yh : float
         Mass fraction of hydrogen from ultimate analysis CHO basis
-    chem : ndarray
-        Chemical analysis data as [cellulose, hemicellulose, lignin]
+    ychem : ndarray
+        Mass fractions of chemical analysis data for [cellulose, hemicellulose, lignin]
 
     Returns
     -------
@@ -30,10 +30,10 @@ def objfunc(x, yc, yh, chem):
     Default splitting parameters are α = 0.6, β = 0.8, γ = 0.8, δ = 1, ε = 1.
     """
     alpha, beta, gamma, delta, epsilon = x
-    cell_data, hemi_data, lig_data = chem
+    ycell_data, yhemi_data, ylig_data = ychem
 
     bc = cm.biocomp(yc, yh, alpha=alpha, beta=beta, gamma=gamma, delta=delta, epsilon=epsilon)
-    cell, hemi, ligc, ligh, ligo, _, _ = bc['y_daf']
-    lig = ligc + ligh + ligo
+    ycell, yhemi, yligc, yligh, yligo, _, _ = bc['y_daf']
+    ylig = yligc + yligh + yligo
 
-    return (cell - cell_data)**2 + (hemi - hemi_data)**2 + (lig - lig_data)**2
+    return (ycell - ycell_data)**2 + (yhemi - yhemi_data)**2 + (ylig - ylig_data)**2
