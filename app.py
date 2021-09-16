@@ -4,6 +4,16 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from calc_biocomp import calc_biocomp
 
+# App state
+# ----------------------------------------------------------------------------
+
+if 'alpha' not in st.session_state:
+    st.session_state['alpha'] = 0.6
+    st.session_state['beta'] = 0.8
+    st.session_state['gamma'] = 0.8
+    st.session_state['delta'] = 1.0
+    st.session_state['epsilon'] = 1.0
+
 # Sidebar
 # ----------------------------------------------------------------------------
 
@@ -19,6 +29,8 @@ yh = hydro / 100
 yh2o = h2o / 100
 yash = ash / 100
 
+# ---
+
 st.sidebar.header('Chemical analysis')
 cell = st.sidebar.number_input('Cellulose %', min_value=20.00, max_value=70.00, value=28.98, step=0.1)
 hemi = st.sidebar.number_input('Hemicellulose %', min_value=20.00, max_value=70.00, value=22.02, step=0.1)
@@ -30,24 +42,23 @@ yhemi = hemi / 100
 ylig = lig / 100
 ychem = [ycell, yhemi, ylig]
 
+# ---
+
 st.sidebar.header('Splitting parameters')
-optimize = st.sidebar.button('Optimize')
 
-if not optimize:
-    alpha = st.sidebar.slider('α', 0.0, 1.0, 0.6)
-    beta = st.sidebar.slider('β', 0.0, 1.0, 0.8)
-    gamma = st.sidebar.slider('γ', 0.0, 1.0, 0.8)
-    delta = st.sidebar.slider('δ', 0.0, 1.0, 1.0)
-    epsilon = st.sidebar.slider('ε', 0.0, 1.0, 1.0)
-    bc = cm.biocomp(yc, yh, yh2o=yh2o, yash=yash, alpha=alpha, beta=beta, gamma=gamma, delta=delta, epsilon=epsilon)
+if st.sidebar.button('Optimize'):
+    _, splits = calc_biocomp(yc, yh, ychem)
+    st.session_state['alpha'] = float(splits[0])
+    st.session_state['beta'] = float(splits[1])
+    st.session_state['gamma'] = float(splits[2])
+    st.session_state['delta'] = float(splits[3])
+    st.session_state['epsilon'] = float(splits[4])
 
-if optimize:
-    bc, splits = calc_biocomp(yc, yh, ychem)
-    alpha = st.sidebar.slider('α', 0.0, 1.0, float(splits[0]))
-    beta = st.sidebar.slider('β', 0.0, 1.0, float(splits[1]))
-    gamma = st.sidebar.slider('γ', 0.0, 1.0, float(splits[2]))
-    delta = st.sidebar.slider('δ', 0.0, 1.0, float(splits[3]))
-    epsilon = st.sidebar.slider('ε', 0.0, 1.0, float(splits[4]))
+st.sidebar.slider('α', min_value=0.0, max_value=1.0, key='alpha')
+st.sidebar.slider('β', min_value=0.0, max_value=1.0, key='beta')
+st.sidebar.slider('γ', min_value=0.0, max_value=1.0, key='gamma')
+st.sidebar.slider('δ', min_value=0.0, max_value=1.0, key='delta')
+st.sidebar.slider('ε', min_value=0.0, max_value=1.0, key='epsilon')
 
 # Content
 # ----------------------------------------------------------------------------
@@ -62,6 +73,13 @@ st.markdown(
 col1, _ = st.columns([2, 1])
 
 with col1:
+    bc = cm.biocomp(yc, yh, yh2o=yh2o, yash=yash,
+                    alpha=st.session_state['alpha'],
+                    beta=st.session_state['beta'],
+                    gamma=st.session_state['gamma'],
+                    delta=st.session_state['delta'],
+                    epsilon=st.session_state['epsilon'])
+
     # Plot biomass composition
     fig, ax = plt.subplots()
     cm.plot_biocomp(ax, yc, yh, bc['y_rm1'], bc['y_rm2'], bc['y_rm3'])
@@ -74,5 +92,6 @@ results = {
     'y_wet': bc['y_wet'],
     'y_wetash': bc['y_wetash']
 }
+
 df = pd.DataFrame(results, index=['cell', 'hemi', 'lig-c', 'lig-h', 'lig-o', 'tann', 'tgl'])
 st.table(df)
