@@ -1,8 +1,8 @@
 # Biomass composition
 
-This is a web tool for estimating biomass composition from ultimate analysis data. The composition is for use with the Ranzi, Debiagi, et al. biomass pyrolysis kinetics scheme.
+This is a web tool for estimating biomass composition from ultimate analysis data. The code is based on the biomass characterization method discussed in the papers referenced below. The composition is for use with the Ranzi, Debiagi, et al. biomass pyrolysis kinetics scheme.
 
-View the web app at https://share.streamlit.io/wigging/biocomp/main/app.py
+View the web tool at https://share.streamlit.io/wigging/biocomp/main/app.py
 
 ## Installation
 
@@ -22,7 +22,13 @@ $ source venv/bin/activate
 
 ## Usage
 
-Once the app is running, enter ultimate analysis data in the parameters column on the left sidebar. Sliders are given to adjust the various splitting parameter values.
+Run the app locally or use the web version. Once the app is running, enter ultimate and chemical analysis data in the parameters column on the left sidebar. Click the Optimize button to estimate the splitting parameters. Use the sliders to further adjust the splitting parameters. Results are shown to the right of the sidebar.
+
+## Citation
+
+To cite this work, use the "Cite this repository" feature available on the right side of this repository page or use the reference text given below.
+
+> Gavin Wiggins. Biocomp: A biomass composition tool. Available at https://github.com/wigging/biocomp.
 
 ## References
 
