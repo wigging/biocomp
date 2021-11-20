@@ -1,8 +1,8 @@
 import chemics as cm
 import streamlit as st
-import matplotlib.pyplot as plt
 import pandas as pd
-from calc_biocomp import calc_biocomp
+from biocomp import calc_biocomp
+from plotter import plot_biocomp
 
 # App state
 # ----------------------------------------------------------------------------
@@ -66,24 +66,23 @@ st.sidebar.slider('ε', min_value=0.0, max_value=1.0, key='epsilon')
 st.title('Biomass composition')
 
 st.markdown(
-    'Estimate biomass composition based on the carbon and hydrogen fractions \
-    from ultimate analysis data. Adjust the splitting parameter values with the sliders.'
-)
+    """
+    Estimate biomass composition based on the carbon and hydrogen fractions
+    from ultimate analysis data. Use chemical analysis data to optimize the
+    splitting parameters. Adjust the splitting parameter values with the
+    sliders.
+    """)
 
-col1, _ = st.columns([2, 1])
+bc = cm.biocomp(yc, yh, yh2o=yh2o, yash=yash,
+                alpha=st.session_state['alpha'],
+                beta=st.session_state['beta'],
+                gamma=st.session_state['gamma'],
+                delta=st.session_state['delta'],
+                epsilon=st.session_state['epsilon'])
 
-with col1:
-    bc = cm.biocomp(yc, yh, yh2o=yh2o, yash=yash,
-                    alpha=st.session_state['alpha'],
-                    beta=st.session_state['beta'],
-                    gamma=st.session_state['gamma'],
-                    delta=st.session_state['delta'],
-                    epsilon=st.session_state['epsilon'])
-
-    # Plot biomass composition
-    fig, ax = plt.subplots()
-    cm.plot_biocomp(ax, yc, yh, bc['y_rm1'], bc['y_rm2'], bc['y_rm3'])
-    st.pyplot(fig)
+# Plot biomass composition
+p = plot_biocomp(yc, yh, bc['y_rm1'], bc['y_rm2'], bc['y_rm3'])
+st.bokeh_chart(p, use_container_width=True)
 
 results = {
     'x_daf': bc['x_daf'],
