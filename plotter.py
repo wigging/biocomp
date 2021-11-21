@@ -26,7 +26,9 @@ def plot_biocomp(yc, yh, yrm1, yrm2, yrm3):
     """
     p = figure(
         x_axis_label='Carbon mass fraction, daf basis [-]',
-        y_axis_label='Hydrogen mass fraction, daf basis [-]')
+        y_axis_label='Hydrogen mass fraction, daf basis [-]',
+        width=600,
+        height=400)
 
     p.triangle(yc, yh, color='blueviolet', size=10, legend_label='biomass')
 
