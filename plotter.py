@@ -28,7 +28,9 @@ def plot_biocomp(yc, yh, yrm1, yrm2, yrm3):
         x_axis_label='Carbon mass fraction, daf basis [-]',
         y_axis_label='Hydrogen mass fraction, daf basis [-]',
         max_height=400,
-        height_policy='max')
+        height_policy='max',
+        max_width=600,
+        width_policy='max')
 
     p.triangle(yc, yh, color='blueviolet', size=10, legend_label='biomass')
 
@@ -64,7 +66,7 @@ def plot_biocomp(yc, yh, yrm1, yrm2, yrm3):
     p.add_layout(ligo)
 
     p.circle(0.5921, 0.0395, size=8)
-    tann = Label(x=0.5921, y=0.0395, x_offset=-14, y_offset=-20, text='tann')
+    tann = Label(x=0.5921, y=0.0395, x_offset=10, y_offset=-10, text='tann')
     p.add_layout(tann)
 
     p.circle(0.7634, 0.1116, size=8)
