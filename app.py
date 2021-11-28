@@ -82,8 +82,8 @@ bc = cm.biocomp(yc, yh, yh2o=yh2o, yash=yash,
                 epsilon=st.session_state['epsilon'])
 
 # Plot biomass composition
-# p = plot_biocomp(yc, yh, bc['y_rm1'], bc['y_rm2'], bc['y_rm3'])
-# st.bokeh_chart(p)
+p = plot_biocomp(yc, yh, bc['y_rm1'], bc['y_rm2'], bc['y_rm3'])
+st.bokeh_chart(p)
 
 results = {
     'x_daf': bc['x_daf'],
