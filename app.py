@@ -70,7 +70,8 @@ st.markdown(
     Estimate biomass composition based on the carbon and hydrogen fractions
     from ultimate analysis data. Use chemical analysis data to optimize the
     splitting parameters. Adjust the splitting parameter values with the
-    sliders.
+    sliders. Results are for use with the Ranzi, Debiagi, et al. kinetics
+    scheme for biomass pyrolysis.
     """)
 
 bc = cm.biocomp(yc, yh, yh2o=yh2o, yash=yash,
