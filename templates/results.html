@@ -3,25 +3,9 @@
 <h3 class="mt-4">Results</h3>
 
 {% if optimize %}
-    <p>Optimized splitting parameters are:</p>
-
-    <ul class="list-unstyled">
-        <li>α = {{ splits[0] }}</li>
-        <li>β = {{ splits[1] }}</li>
-        <li>γ = {{ splits[2] }}</li>
-        <li>δ = {{ splits[3] }}</li>
-        <li>ε = {{ splits[4] }}</li>
-    </ul>
+    <p>Optimized splitting parameters are α = {{ splits[0] }}, β = {{ splits[1] }}, γ = {{ splits[2] }}, δ = {{ splits[3] }}, ε = {{ splits[4] }}</p>
 {% else %}
-    <p>Using the following splitting parameters:</p>
-
-    <ul class="list-unstyled">
-        <li>α = {{ splits[0] }}</li>
-        <li>β = {{ splits[1] }}</li>
-        <li>γ = {{ splits[2] }}</li>
-        <li>δ = {{ splits[3] }}</li>
-        <li>ε = {{ splits[4] }}</li>
-    </ul>
+    <p>Using the given splitting parameters α = {{ splits[0] }}, β = {{ splits[1] }}, γ = {{ splits[2] }}, δ = {{ splits[3] }}, ε = {{ splits[4] }}</p>
 {% endif %}
 
 <p>Calculated biomass composition is:</p>
