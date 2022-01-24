@@ -1,0 +1,101 @@
+<hr>
+
+<h3 class="mt-4">Results</h3>
+
+{% if optimize %}
+    <p>Optimized splitting parameters are:</p>
+
+    <ul class="list-unstyled">
+        <li>α = {{ splits[0] }}</li>
+        <li>β = {{ splits[1] }}</li>
+        <li>γ = {{ splits[2] }}</li>
+        <li>δ = {{ splits[3] }}</li>
+        <li>ε = {{ splits[4] }}</li>
+    </ul>
+{% else %}
+    <p>Using the following splitting parameters:</p>
+
+    <ul class="list-unstyled">
+        <li>α = {{ splits[0] }}</li>
+        <li>β = {{ splits[1] }}</li>
+        <li>γ = {{ splits[2] }}</li>
+        <li>δ = {{ splits[3] }}</li>
+        <li>ε = {{ splits[4] }}</li>
+    </ul>
+{% endif %}
+
+<p>Calculated biomass composition is:</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Biomass</th>
+            <th scope="col">X (daf)</th>
+            <th scope="col">X (wet)</th>
+            <th scope="col">Y (daf)</th>
+            <th scope="col">Y (wet)</th>
+            <th scope="col">Y (wetash)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>CELL</td>
+            <td>{{ biocomp['xdaf'][0] }}</td>
+            <td>{{ biocomp['xwet'][0] }}</td>
+            <td>{{ biocomp['ydaf'][0] }}</td>
+            <td>{{ biocomp['ywet'][0] }}</td>
+            <td>{{ biocomp['ywetash'][0] }}</td>
+        </tr>
+        <tr>
+            <td>HEMI</td>
+            <td>{{ biocomp['xdaf'][1] }}</td>
+            <td>{{ biocomp['xwet'][1] }}</td>
+            <td>{{ biocomp['ydaf'][1] }}</td>
+            <td>{{ biocomp['ywet'][1] }}</td>
+            <td>{{ biocomp['ywetash'][1] }}</td>
+        </tr>
+        <tr>
+            <td>LIG-C</td>
+            <td>{{ biocomp['xdaf'][2] }}</td>
+            <td>{{ biocomp['xwet'][2] }}</td>
+            <td>{{ biocomp['ydaf'][2] }}</td>
+            <td>{{ biocomp['ywet'][2] }}</td>
+            <td>{{ biocomp['ywetash'][2] }}</td>
+        </tr>
+        <tr>
+            <td>LIG-H</td>
+            <td>{{ biocomp['xdaf'][3] }}</td>
+            <td>{{ biocomp['xwet'][3] }}</td>
+            <td>{{ biocomp['ydaf'][3] }}</td>
+            <td>{{ biocomp['ywet'][3] }}</td>
+            <td>{{ biocomp['ywetash'][3] }}</td>
+        </tr>
+        <tr>
+            <td>LIG-O</td>
+            <td>{{ biocomp['xdaf'][4] }}</td>
+            <td>{{ biocomp['xwet'][4] }}</td>
+            <td>{{ biocomp['ydaf'][4] }}</td>
+            <td>{{ biocomp['ywet'][4] }}</td>
+            <td>{{ biocomp['ywetash'][4] }}</td>
+        </tr>
+        <tr>
+            <td>TANN</td>
+            <td>{{ biocomp['xdaf'][5] }}</td>
+            <td>{{ biocomp['xwet'][5] }}</td>
+            <td>{{ biocomp['ydaf'][5] }}</td>
+            <td>{{ biocomp['ywet'][5] }}</td>
+            <td>{{ biocomp['ywetash'][5] }}</td>
+        </tr>
+        <tr>
+            <td>TGL</td>
+            <td>{{ biocomp['xdaf'][6] }}</td>
+            <td>{{ biocomp['xwet'][6] }}</td>
+            <td>{{ biocomp['ydaf'][6] }}</td>
+            <td>{{ biocomp['ywet'][6] }}</td>
+            <td>{{ biocomp['ywetash'][6] }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Comparison of the biomass carbon and hydrogen along with the reference mixtures (daf basis):</p>
+
