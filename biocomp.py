@@ -41,17 +41,11 @@ def _objfunc(x, yc, yh, ychem):
     return (ycell - ycell_data)**2 + (yhemi - yhemi_data)**2 + (ylig - ylig_data)**2
 
 
-def calc_biocomp(yc, yh, ychem):
+def calc_opt_biocomp(yc, yh, ychem, yh2o, yash):
     """
     Calculate the optimized splitting parameters and associated biomass
-    composition (daf) of the feedstock.
+    composition of the feedstock.
     """
-
-    # Get mass fractions for ultimate analysis data
-    # Get mass fractions of biomass composition from chemical analysis data
-    # yc = self.ult_cho[0] / 100
-    # yh = self.ult_cho[1] / 100
-    # ybc = self.chem_bc / 100
 
     # Determine optimized splitting parameters using default values for `x0`
     # where each parameter is bound within 0 to 1
@@ -59,9 +53,9 @@ def calc_biocomp(yc, yh, ychem):
     bnds = ((0, 1), (0, 1), (0, 1), (0, 1), (0, 1))
     res = minimize(_objfunc, x0, args=(yc, yh, ychem), method='L-BFGS-B', bounds=bnds)
 
-    # Calculate biomass composition as dry ash-free basis (daf)
-    bc = cm.biocomp(yc, yh, alpha=res.x[0], beta=res.x[1], gamma=res.x[2], delta=res.x[3], epsilon=res.x[4])
-    cell, hemi, ligc, ligh, ligo, tann, tgl = bc['y_daf']
+    # Calculate biomass composition using optimized splitting parameters, water, and ash
+    bc = cm.biocomp(yc, yh, yh2o=yh2o, yash=yash, alpha=res.x[0], beta=res.x[1],
+                    gamma=res.x[2], delta=res.x[3], epsilon=res.x[4])
 
     # Optimized splitting parameters in order of [alpha, beta, gamma, delta, epsilon]
     splits = np.array([res.x[0], res.x[1], res.x[2], res.x[3], res.x[4]])
