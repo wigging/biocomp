@@ -9,99 +9,116 @@
 </head>
 <body>
     <div class="container">
+
         <div class="row my-4">
-            <div class="col-md">
+            <div class="col">
                 <h1>🌳 Biomass composition tool</h1>
                 <p>Use the form below to input parameters for calculating the biomass composition. Results will appear on the bottom after clicking the Submit button.</p>
             </div>
         </div>
 
-        <form hx-post="/results" hx-target="#results">
-            <div class="row mb-3">
-                <h3>Ultimate analysis</h3>
-
-                <div class="col-md-2">
-                    <label for="carbon" class="form-label">Carbon %</label>
-                    <input type="number" name="carbon" class="form-control" min="45.0" max="75.0" step="0.1" value="53.0">
-                </div>
-
-                <div class="col-md-2">
-                    <label for="hydrogen" class="form-label">Hydrogen %</label>
-                    <input type="number" name="hydrogen" class="form-control" min="4.0" max="11.0" step="0.1" value="6.0">
-                </div>
-
-                <div class="col-md-2">
-                    <label for="water" class="form-label">H₂O %</label>
-                    <input type="number" name="water" class="form-control" min="1.0" max="30.0" step="0.1" value="2.0">
-                </div>
-
-                <div class="col-md-2">
-                    <label for="ash" class="form-label">Ash %</label>
-                    <input type="number" name="ash" class="form-control" min="1.0" max="30.0" step="0.1" value="2.0">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <h3>Chemical analysis</h3>
-
-                <div class="col-md-2">
-                    <label for="cellulose" class="form-label">Cellulose %</label>
-                    <input type="number" name="cellulose" class="form-control" min="20.0" max="70.0" step="0.1" value="28.9">
-                </div>
-
-                <div class="col-md-2">
-                    <label for="hemicellulose" class="form-label">Hemicellulose %</label>
-                    <input type="number" name="hemicellulose" class="form-control" min="20.0" max="70.0" step="0.1" value="22.0">
-                </div>
-
-                <div class="col-md-2">
-                    <label for="lignin" class="form-label">Lignin %</label>
-                    <input type="number" name="lignin" class="form-control" min="20.0" max="70.0" step="0.1" value="36.5">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <h3>Splitting parameters</h3>
-
-                <div class="col-md-2">
-                    <label for="alpha" class="form-label">α</label>
-                    <input type="number" name="alpha" class="form-control" min="0.0" max="1.0" step="0.1" value="0.6">
-                </div>
-
-                <div class="col-md-2">
-                    <label for="beta" class="form-label">β</label>
-                    <input type="number" name="beta" class="form-control" min="0.0" max="1.0" step="0.1" value="0.8">
-                </div>
-
-                <div class="col-md-2">
-                    <label for="gamma" class="form-label">γ</label>
-                    <input type="number" name="gamma" class="form-control" min="0.0" max="1.0" step="0.1" value="0.8">
-                </div>
-
-                <div class="col-md-2">
-                    <label for="delta" class="form-label">δ</label>
-                    <input type="number" name="delta" class="form-control" min="0.0" max="1.0" step="0.1" value="1.0">
-                </div>
-
-                <div class="col-md-2">
-                    <label for="epsilon" class="form-label">ε</label>
-                    <input type="number" name="epsilon" class="form-control" min="0.0" max="1.0" step="0.1" value="1.0">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-3">
-                    <div class="form-check mb-3">
-                        <input type="checkbox" name="optimize" class="form-check-input" value="">
-                        <label for="optimize" class="form-check-label">Optimize</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-        </form>
-
         <div class="row">
-            <div class="col-md">
+            <div class="col-lg-6">
+
+                <form hx-post="/results" hx-target="#results">
+
+                    <div class="row">
+                        <div class="col">
+                            <h3>Ultimate analysis</h3>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 g-2">
+                        <div class="col-lg-2">
+                            <label for="carbon" class="form-label">Carbon %</label>
+                            <input type="number" name="carbon" class="form-control" min="45.0" max="75.0" step="0.1" value="53.0">
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="hydrogen" class="form-label">Hydrogen %</label>
+                            <input type="number" name="hydrogen" class="form-control" min="4.0" max="11.0" step="0.1" value="6.0">
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="water" class="form-label">H₂O %</label>
+                            <input type="number" name="water" class="form-control" min="1.0" max="30.0" step="0.1" value="2.0">
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="ash" class="form-label">Ash %</label>
+                            <input type="number" name="ash" class="form-control" min="1.0" max="30.0" step="0.1" value="2.0">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <h3>Chemical analysis</h3>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 g-2">
+                        <div class="col-lg-2">
+                            <label for="cellulose" class="form-label">Cellulose %</label>
+                            <input type="number" name="cellulose" class="form-control" min="20.0" max="70.0" step="0.1" value="28.9">
+                        </div>
+
+                        <div class="col-lg-3">
+                            <label for="hemicellulose" class="form-label">Hemicellulose %</label>
+                            <input type="number" name="hemicellulose" class="form-control" min="20.0" max="70.0" step="0.1" value="22.0">
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="lignin" class="form-label">Lignin %</label>
+                            <input type="number" name="lignin" class="form-control" min="20.0" max="70.0" step="0.1" value="36.5">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <h3>Splitting parameters</h3>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 g-2">
+                        <div class="col-lg-2">
+                            <label for="alpha" class="form-label">α</label>
+                            <input type="number" name="alpha" class="form-control" min="0.0" max="1.0" step="0.1" value="0.6">
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="beta" class="form-label">β</label>
+                            <input type="number" name="beta" class="form-control" min="0.0" max="1.0" step="0.1" value="0.8">
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="gamma" class="form-label">γ</label>
+                            <input type="number" name="gamma" class="form-control" min="0.0" max="1.0" step="0.1" value="0.8">
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="delta" class="form-label">δ</label>
+                            <input type="number" name="delta" class="form-control" min="0.0" max="1.0" step="0.1" value="1.0">
+                        </div>
+
+                        <div class="col-lg-2">
+                            <label for="epsilon" class="form-label">ε</label>
+                            <input type="number" name="epsilon" class="form-control" min="0.0" max="1.0" step="0.1" value="1.0">
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-lg-3">
+                            <div class="form-check mb-3">
+                                <input type="checkbox" name="optimize" class="form-check-input" value="">
+                                <label for="optimize" class="form-check-label">Optimize</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-6">
                 <div id="results"></div>
             </div>
         </div>

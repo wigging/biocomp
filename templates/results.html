@@ -1,9 +1,7 @@
-<hr>
-
-<h3 class="mt-4">Results</h3>
+<h3>Results</h3>
 
 {% if optimize %}
-    <p>Optimized splitting parameters are α = {{ splits[0] }}, β = {{ splits[1] }}, γ = {{ splits[2] }}, δ = {{ splits[3] }}, ε = {{ splits[4] }}</p>
+    <p>Using the optimized splitting parameters α = {{ splits[0] }}, β = {{ splits[1] }}, γ = {{ splits[2] }}, δ = {{ splits[3] }}, ε = {{ splits[4] }}</p>
 {% else %}
     <p>Using the given splitting parameters α = {{ splits[0] }}, β = {{ splits[1] }}, γ = {{ splits[2] }}, δ = {{ splits[3] }}, ε = {{ splits[4] }}</p>
 {% endif %}
