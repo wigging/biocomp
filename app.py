@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from biocomp import calc_opt_biocomp
+from plotter import plot_biocomp
 import chemics as cm
 
 app = Flask(__name__)
@@ -68,4 +69,7 @@ def results():
         'ywetash': [round(x, 2) for x in bc['y_wetash']]
     }
 
-    return render_template('results.html', splits=splits, biocomp=biocomp, optimize=optimize)
+    # Chart
+    script, div = plot_biocomp(yc, yh, bc['y_rm1'], bc['y_rm2'], bc['y_rm3'])
+
+    return render_template('results.html', splits=splits, biocomp=biocomp, optimize=optimize, script=script, div=div)

@@ -1,5 +1,6 @@
 from bokeh.models import Label, PolyAnnotation
 from bokeh.plotting import figure
+from bokeh.embed import components
 
 
 def plot_biocomp(yc, yh, yrm1, yrm2, yrm3):
@@ -82,4 +83,6 @@ def plot_biocomp(yc, yh, yrm1, yrm2, yrm3):
 
     p.legend.location = 'top_left'
 
-    return p
+    script, div = components(p)
+
+    return script, div

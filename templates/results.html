@@ -6,9 +6,11 @@
     <p>Using the given splitting parameters α = {{ splits[0] }}, β = {{ splits[1] }}, γ = {{ splits[2] }}, δ = {{ splits[3] }}, ε = {{ splits[4] }}</p>
 {% endif %}
 
-<p>Calculated biomass composition is:</p>
+{{ script | safe }}
 
-<table class="table table-striped">
+{{ div | safe }}
+
+<table class="table table-striped mb-5">
     <thead>
         <tr>
             <th scope="col">Biomass</th>
@@ -78,6 +80,3 @@
         </tr>
     </tbody>
 </table>
-
-<p>Comparison of the biomass carbon and hydrogen along with the reference mixtures (daf basis):</p>
-

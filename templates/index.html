@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js" crossorigin="anonymous"></script>
     <title>🌳 Biomass composition tool</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row gx-5">
             <div class="col-lg-6">
 
                 <form hx-post="/results" hx-target="#results">
@@ -28,23 +29,23 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3 g-2">
-                        <div class="col-lg-2">
+                    <div class="row mb-3">
+                        <div class="col-lg-3">
                             <label for="carbon" class="form-label">Carbon %</label>
                             <input type="number" name="carbon" class="form-control" min="45.0" max="75.0" step="0.1" value="53.0">
                         </div>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <label for="hydrogen" class="form-label">Hydrogen %</label>
                             <input type="number" name="hydrogen" class="form-control" min="4.0" max="11.0" step="0.1" value="6.0">
                         </div>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <label for="water" class="form-label">H₂O %</label>
                             <input type="number" name="water" class="form-control" min="1.0" max="30.0" step="0.1" value="2.0">
                         </div>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <label for="ash" class="form-label">Ash %</label>
                             <input type="number" name="ash" class="form-control" min="1.0" max="30.0" step="0.1" value="2.0">
                         </div>
@@ -56,18 +57,18 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3 g-2">
-                        <div class="col-lg-2">
+                    <div class="row mb-3">
+                        <div class="col-lg-4">
                             <label for="cellulose" class="form-label">Cellulose %</label>
                             <input type="number" name="cellulose" class="form-control" min="20.0" max="70.0" step="0.1" value="28.9">
                         </div>
 
-                        <div class="col-lg-3">
+                        <div class="col-lg-4">
                             <label for="hemicellulose" class="form-label">Hemicellulose %</label>
                             <input type="number" name="hemicellulose" class="form-control" min="20.0" max="70.0" step="0.1" value="22.0">
                         </div>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg-4">
                             <label for="lignin" class="form-label">Lignin %</label>
                             <input type="number" name="lignin" class="form-control" min="20.0" max="70.0" step="0.1" value="36.5">
                         </div>
@@ -79,28 +80,28 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3 g-2">
-                        <div class="col-lg-2">
+                    <div class="row mb-3">
+                        <div class="col-lg">
                             <label for="alpha" class="form-label">α</label>
                             <input type="number" name="alpha" class="form-control" min="0.0" max="1.0" step="0.1" value="0.6">
                         </div>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg">
                             <label for="beta" class="form-label">β</label>
                             <input type="number" name="beta" class="form-control" min="0.0" max="1.0" step="0.1" value="0.8">
                         </div>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg">
                             <label for="gamma" class="form-label">γ</label>
                             <input type="number" name="gamma" class="form-control" min="0.0" max="1.0" step="0.1" value="0.8">
                         </div>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg">
                             <label for="delta" class="form-label">δ</label>
                             <input type="number" name="delta" class="form-control" min="0.0" max="1.0" step="0.1" value="1.0">
                         </div>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg">
                             <label for="epsilon" class="form-label">ε</label>
                             <input type="number" name="epsilon" class="form-control" min="0.0" max="1.0" step="0.1" value="1.0">
                         </div>
@@ -119,13 +120,15 @@
             </div>
 
             <div class="col-lg-6">
-                <div id="results"></div>
+                <div id="results">
+                    <h3>Results</h3>
+                    <p>Submit parameters to see results.</p>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="https://unpkg.com/htmx.org@1.6.1" integrity="sha384-tvG/2mnCFmGQzYC1Oh3qxQ7CkQ9kMzYjWZSNtrRZygHPDDqottzEJsqS4oUVodhW" crossorigin="anonymous"></script>
-    <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
 
 </body>
 </html>
