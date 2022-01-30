@@ -1,3 +1,4 @@
-streamlit
+bokeh
 chemics
-bokeh==2.4.1
+flask
+scipy
