@@ -62,11 +62,11 @@ def results():
     splits = [round(s, 2) for s in splits]
 
     biocomp = {
-        'xdaf': [round(x, 2) for x in bc['x_daf']],
-        'xwet': [round(x, 2) for x in bc['x_wet']],
-        'ydaf': [round(x, 2) for x in bc['y_daf']],
-        'ywet': [round(x, 2) for x in bc['y_wet']],
-        'ywetash': [round(x, 2) for x in bc['y_wetash']]
+        'xdaf': [round(x, 4) for x in bc['x_daf']],
+        'xwet': [round(x, 4) for x in bc['x_wet']],
+        'ydaf': [round(x, 4) for x in bc['y_daf']],
+        'ywet': [round(x, 4) for x in bc['y_wet']],
+        'ywetash': [round(x, 4) for x in bc['y_wetash']]
     }
 
     # Chart

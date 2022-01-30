@@ -31,7 +31,8 @@ def plot_biocomp(yc, yh, yrm1, yrm2, yrm3):
         max_height=400,
         height_policy='max',
         max_width=600,
-        width_policy='max')
+        width_policy='max',
+        tooltips=[('(x, y)', '($x{.00}, $y{.00})')])
 
     p.triangle(yc, yh, color='blueviolet', size=10, legend_label='biomass')
 
