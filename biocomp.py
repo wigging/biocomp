@@ -44,6 +44,28 @@ def calc_opt_biocomp(yc, yh, ychem, yh2o, yash):
     """
     Calculate the optimized splitting parameters and associated biomass
     composition of the feedstock.
+
+    Parameters
+    ----------
+    yc : float
+        Mass fraction of carbon from ultimate analysis CHO basis
+    yh : float
+        Mass fraction of hydrogen from ultimate analysis CHO basis
+    ychem : ndarray
+        Mass fractions of chemical analysis data for [cellulose, hemicellulose, lignin]
+    yh2o : float
+        Mass fraction of water in biomass, as received basis [-]
+    yash : float
+        Mass fraction of ash in biomass, as received basis [-]
+
+    Returns
+    -------
+    bc : dict
+        Reference mixtures and biomass compositions on the basis of mole
+        fractions (x) and mass fractions (y). See Chemics `biocomp()` docs
+        for more information.
+    splits : list
+        Optimized splitting parameter values as [α, β, γ, δ, ε]
     """
 
     # Determine optimized splitting parameters using default values for `x0`
