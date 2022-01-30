@@ -1,5 +1,4 @@
 import chemics as cm
-import numpy as np
 from scipy.optimize import minimize
 
 
@@ -58,6 +57,6 @@ def calc_opt_biocomp(yc, yh, ychem, yh2o, yash):
                     gamma=res.x[2], delta=res.x[3], epsilon=res.x[4])
 
     # Optimized splitting parameters in order of [alpha, beta, gamma, delta, epsilon]
-    splits = np.array([res.x[0], res.x[1], res.x[2], res.x[3], res.x[4]])
+    splits = [res.x[0], res.x[1], res.x[2], res.x[3], res.x[4]]
 
     return bc, splits
