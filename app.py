@@ -13,6 +13,16 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/usage')
+def usage():
+    return render_template('usage.html')
+
+
 @app.route('/results', methods=['POST'])
 def results():
 
@@ -69,7 +79,7 @@ def results():
         'ywetash': [round(x, 4) for x in bc['y_wetash']]
     }
 
-    # Chart
+    # Script and div for Bokeh plot
     script, div = plot_biocomp(yc, yh, bc['y_rm1'], bc['y_rm2'], bc['y_rm3'])
 
     return render_template('results.html', splits=splits, biocomp=biocomp, optimize=optimize, script=script, div=div)
