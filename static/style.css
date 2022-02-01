@@ -5,3 +5,15 @@ body {
 a {
     text-decoration: none;
 }
+
+a:hover {
+    color: #4407E6;
+    background: #EEEEEE;
+    text-decoration: none;
+}
+
+.bk-root {
+    /* margins for bokeh plot figure */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
