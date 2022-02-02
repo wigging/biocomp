@@ -28,7 +28,7 @@ See the [Usage page](https://biocomp.herokuapp.com/usage) for information about 
 
 To cite this work, use the "Cite this repository" feature available on the right side of this repository page or use the reference text given below.
 
-> Gavin Wiggins. BioComp: a web tool for estimating biomass composition. Available at https://github.com/wigging/biocomp.
+> Gavin Wiggins. BioComp: A web tool for estimating biomass composition. Version 22.02. Available at https://github.com/wigging/biocomp.
 
 ## References
 
