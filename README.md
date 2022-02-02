@@ -1,34 +1,34 @@
-# Biomass composition
+# 🌳 BioComp
 
-This is a web tool for estimating biomass composition from ultimate analysis data. The code is based on the biomass characterization method discussed in the papers referenced below. The composition is for use with the Ranzi, Debiagi, et al. biomass pyrolysis kinetics scheme.
+BioComp is a web tool for estimating biomass composition from ultimate and chemical analysis data. The code is based on the biomass characterization method discussed in the Ranzi, Debiagi, et al. papers referenced below. The composition is for use with the Ranzi, Debiagi, et al. biomass pyrolysis kinetics scheme.
 
-View the web tool at https://share.streamlit.io/wigging/biocomp/main/app.py
+View the web tool at https://biocomp.herokuapp.com
 
-## Installation
+## Local installation
 
-Download or clone this repository then create and activate the Python virtual environment. Install the dependencies using `pip` then run the web app using `streamlit`. The app should automatically appear in your web browser.
+To install BioComp on your local machine, download or clone this repository then create and activate a Python virtual environment. Install the dependencies using `pip` then run the Flask web app using `flask run`. See the terminal commands below.
 
 ```bash
 # Create and activate the Python virtual environment
-$ python -v venv venv
+$ python -m venv venv
 $ source venv/bin/activate
 
 # Install the dependencies
 (venv) $ pip install -r requirements.txt
 
 # Run the web app
-(venv) $ streamlit run app.py
+(venv) $ flask run
 ```
 
 ## Usage
 
-Run the app locally or use the web version. Once the app is running, enter ultimate and chemical analysis data in the parameters column on the left sidebar. Click the Optimize button to estimate the splitting parameters. Use the sliders to further adjust the splitting parameters. Results are shown to the right of the sidebar.
+See the [Usage page](https://biocomp.herokuapp.com/usage) for information about using BioComp.
 
 ## Citation
 
 To cite this work, use the "Cite this repository" feature available on the right side of this repository page or use the reference text given below.
 
-> Gavin Wiggins. Biocomp: A biomass composition tool. Available at https://github.com/wigging/biocomp.
+> Gavin Wiggins. BioComp: a web tool for estimating biomass composition. Available at https://github.com/wigging/biocomp.
 
 ## References
 
