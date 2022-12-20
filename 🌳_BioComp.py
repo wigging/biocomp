@@ -8,11 +8,11 @@ def main():
 
     st.title("🌳 BioComp")
 
-    st.markdown(
-        "Welcome to BioComp, a tool for calculating biomass composition from\
-        ultimate and chemical analysis data. Input parameters below then click\
-        the calculate button."
-    )
+    st.markdown("""Welcome to BioComp, a tool for calculating biomass
+    composition from ultimate and chemical analysis data. Adjust the
+    parameters below to update the results. See the About and Usage pages to
+    learn more.
+    """)
 
     st.subheader("Ultimate analysis")
 
