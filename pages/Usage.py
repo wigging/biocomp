@@ -35,7 +35,7 @@ p = """
     <li>If not selected, the biomass composition is calculated using the given or default splitting parameter values.</li>
 </ul>
 
-<p>After providing the parameters discussed above, click or tap the Submit button to calculate the biomass composition.</p>
+<p>The calculated results will automatically update when the input parameters are changed.</p>
 """
 
 st.write(p, unsafe_allow_html=True)
