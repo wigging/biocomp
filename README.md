@@ -6,7 +6,7 @@ View the web tool at https://biocomp.herokuapp.com
 
 ## Local installation
 
-To install BioComp on your local machine, download or clone this repository then create and activate a Python virtual environment. Install the dependencies using `pip` then run the Flask web app using `flask run`. See the terminal commands below.
+To install BioComp on your local machine, download or clone this repository then create and activate a Python virtual environment. Install the dependencies using `pip` then run the Streamlit web app using `streamlit run`. See the terminal commands below.
 
 ```bash
 # Create and activate the Python virtual environment
@@ -17,7 +17,7 @@ $ source venv/bin/activate
 (venv) $ pip install -r requirements.txt
 
 # Run the web app
-(venv) $ flask run
+(venv) $ streamlit run 🌳_BioComp.py
 ```
 
 ## Usage
