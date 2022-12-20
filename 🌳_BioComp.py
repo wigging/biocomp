@@ -75,8 +75,8 @@ def main():
     # Format results for viewing on the web page
     splits = [round(s, 2) for s in splits]
 
-    st.markdown(f"Using α = {splits[0]}, β = {splits[1]}, γ = {splits[2]}, \
-        δ = {splits[3]}, and ε = {splits[4]}")
+    st.markdown(f"Using splitting parameters α = {splits[0]}, β = {splits[1]},\
+        γ = {splits[2]}, δ = {splits[3]}, and ε = {splits[4]}")
 
     d = {
         "Biomass": ["CELL", "HEMI", "LIG-C", "LIG-H", "LIG-O", "TANN", "TGL"],
