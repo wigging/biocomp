@@ -2,7 +2,7 @@
 
 BioComp is a web tool for estimating biomass composition from ultimate and chemical analysis data. The code is based on the biomass characterization method discussed in the Ranzi, Debiagi, et al. papers referenced below. The composition is for use with the Ranzi, Debiagi, et al. biomass pyrolysis kinetics scheme.
 
-View the web tool at https://biocomp.herokuapp.com
+View the BioComp web tool at https://biocomptool.streamlit.app
 
 ## Local installation
 
@@ -22,7 +22,7 @@ $ source venv/bin/activate
 
 ## Usage
 
-See the [Usage page](https://biocomp.herokuapp.com/usage) for information about using BioComp.
+See the [Usage page](https://biocomptool.streamlit.app/Usage) for information about using BioComp.
 
 ## Citation
 
