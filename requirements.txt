@@ -1,5 +1,3 @@
-bokeh
+streamlit
 chemics
-flask
-gunicorn
-scipy
+bokeh==2.4.3
