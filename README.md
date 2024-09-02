@@ -6,7 +6,7 @@ View the BioComp web tool at https://biocomptool.streamlit.app
 
 ## Local installation
 
-To install BioComp on your local machine, download or clone this repository then create and activate a Python virtual environment. Install the dependencies using `pip` then run the Streamlit web app using `streamlit run`. See the terminal commands below.
+To install BioComp on your local machine, download or clone this repository then create and activate a Python virtual environment. Install the dependencies using `pip` then run the Streamlit web app using `streamlit run`. See the terminal commands below. Local installation is only guaranteed for Python 3.10 due to version limits on Bokeh and NumPy which are imposed by Streamlit.
 
 ```bash
 # Create and activate the Python virtual environment
@@ -28,10 +28,11 @@ See the [Usage page](https://biocomptool.streamlit.app/Usage) for information ab
 
 To cite this work, use the "Cite this repository" feature available on the right side of this repository page or use the reference text given below.
 
-> Gavin Wiggins. BioComp: A web tool for estimating biomass composition. Version 22.02. Available at https://github.com/wigging/biocomp.
+> Gavin Wiggins. BioComp: A web tool for estimating biomass composition. Version 24.09. Available at https://github.com/wigging/biocomp.
 
 ## References
 
-Paulo Debiagi, Chiara Pecchi, Giancarlo Gentile, Alessio Frassoldati, Alberto Cuoci, Tiziano Faravelli, and Eliseo Ranzi. "Extractives Extend the Applicability of Multistep Kinetic Scheme of Biomass Pyrolysis." Energy & Fuels, vol. 29, no. 10, pp. 6544-6555, 2015.
+References that were used for calculating the biomass composition are listed below.
 
-Paulo Debiagi, Giancarlo Gentile, Alberto Cuoci, Alessio Frassoldati, Eliseo Ranzi, Tiziano Faravelli. "A predictive model of biochar formation and characterization." Journal of Analytical and Applied Pyrolysis, vol. 134, pp. 326-335, 2018.
+- Paulo Debiagi, Chiara Pecchi, Giancarlo Gentile, Alessio Frassoldati, Alberto Cuoci, Tiziano Faravelli, and Eliseo Ranzi. "Extractives Extend the Applicability of Multistep Kinetic Scheme of Biomass Pyrolysis." Energy & Fuels, vol. 29, no. 10, pp. 6544-6555, 2015.
+- Paulo Debiagi, Giancarlo Gentile, Alberto Cuoci, Alessio Frassoldati, Eliseo Ranzi, Tiziano Faravelli. "A predictive model of biochar formation and characterization." Journal of Analytical and Applied Pyrolysis, vol. 134, pp. 326-335, 2018.
