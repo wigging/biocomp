@@ -4,18 +4,24 @@ BioComp is a web tool for estimating biomass composition from ultimate and chemi
 
 View the BioComp web tool at https://biocomptool.streamlit.app
 
-## Local installation
+## Installation
 
-To install and run BioComp on your computer, first install uv using the instructions at https://docs.astral.sh/uv. Next, clone this repository then run the Streamlit web application using the uv command shown below.
+To install BioComp locally on your computer, first install uv using the instructions at https://docs.astral.sh/uv. Next, clone this repository, then create a Python environment and install the dependencies using the uv sync command as shown below.
 
 ```bash
 cd biocomp
-uv run streamlit run src/app
+uv sync
 ```
 
 ## Usage
 
-See the [Usage page](https://biocomptool.streamlit.app/Usage) for information about using BioComp.
+Run BioComp locally using the uv command shown below.
+
+```bash
+uv run streamlit run src/app.py
+```
+
+Or go to https://biocomptool.streamlit.app to use it on Streamlit Cloud. See the [Usage page](https://biocomptool.streamlit.app/Usage) for more information about using BioComp.
 
 ## Citation
 
