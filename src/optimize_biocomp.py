@@ -34,10 +34,10 @@ def _objfunc(x, yc, yh, ychem):
     ycell_data, yhemi_data, ylig_data = ychem
 
     bc = cm.biocomp(yc, yh, alpha=alpha, beta=beta, gamma=gamma, delta=delta, epsilon=epsilon)
-    ycell, yhemi, yligc, yligh, yligo, _, _ = bc['y_daf']
+    ycell, yhemi, yligc, yligh, yligo, _, _ = bc["y_daf"]
     ylig = yligc + yligh + yligo
 
-    return (ycell - ycell_data)**2 + (yhemi - yhemi_data)**2 + (ylig - ylig_data)**2
+    return (ycell - ycell_data) ** 2 + (yhemi - yhemi_data) ** 2 + (ylig - ylig_data) ** 2
 
 
 def calc_opt_biocomp(yc, yh, ychem, yh2o, yash):
@@ -72,11 +72,20 @@ def calc_opt_biocomp(yc, yh, ychem, yh2o, yash):
     # where each parameter is bound within 0 to 1
     x0 = [0.6, 0.8, 0.8, 1, 1]
     bnds = ((0, 1), (0, 1), (0, 1), (0, 1), (0, 1))
-    res = minimize(_objfunc, x0, args=(yc, yh, ychem), method='L-BFGS-B', bounds=bnds)
+    res = minimize(_objfunc, x0, args=(yc, yh, ychem), method="L-BFGS-B", bounds=bnds)
 
     # Calculate biomass composition using optimized splitting parameters, water, and ash
-    bc = cm.biocomp(yc, yh, yh2o=yh2o, yash=yash, alpha=res.x[0], beta=res.x[1],
-                    gamma=res.x[2], delta=res.x[3], epsilon=res.x[4])
+    bc = cm.biocomp(
+        yc,
+        yh,
+        yh2o=yh2o,
+        yash=yash,
+        alpha=res.x[0],
+        beta=res.x[1],
+        gamma=res.x[2],
+        delta=res.x[3],
+        epsilon=res.x[4],
+    )
 
     # Optimized splitting parameters in order of [alpha, beta, gamma, delta, epsilon]
     splits = [res.x[0], res.x[1], res.x[2], res.x[3], res.x[4]]

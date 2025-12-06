@@ -25,59 +25,61 @@ def plot_biocomp(yc, yh, yrm1, yrm2, yrm3):
         A Bokeh plotting figure.
     """
     p = figure(
-        x_axis_label='Carbon mass fraction, daf basis [-]',
-        y_axis_label='Hydrogen mass fraction, daf basis [-]',
-        tooltips=[('(x, y)', '($x{.00}, $y{.00})')]
+        x_axis_label="Carbon mass fraction, daf basis [-]",
+        y_axis_label="Hydrogen mass fraction, daf basis [-]",
+        tooltips=[("(x, y)", "($x{.00}, $y{.00})")],
     )
 
     p.scatter(yc, yh, color="blueviolet", size=10, legend_label="biomass", marker="triangle")
 
-    p.scatter(yrm1[0], yrm1[1], color='goldenrod', size=8, legend_label='rm1', marker="square")
-    p.scatter(yrm2[0], yrm2[1], color='limegreen', size=8, legend_label='rm2', marker="square")
-    p.scatter(yrm3[0], yrm3[1], color='indianred', size=8, legend_label='rm3', marker="square")
+    p.scatter(yrm1[0], yrm1[1], color="goldenrod", size=8, legend_label="rm1", marker="square")
+    p.scatter(yrm2[0], yrm2[1], color="limegreen", size=8, legend_label="rm2", marker="square")
+    p.scatter(yrm3[0], yrm3[1], color="indianred", size=8, legend_label="rm3", marker="square")
 
     p.line(
         [yrm1[0], yrm2[0], yrm3[0], yrm1[0]],
         [yrm1[1], yrm2[1], yrm3[1], yrm1[1]],
-        color='black',
+        color="black",
         line_width=2,
-        line_dash='dotted')
+        line_dash="dotted",
+    )
 
     p.scatter(0.4444, 0.0617, size=8, marker="circle")
-    cell = Label(x=0.4444, y=0.0617, x_offset=-10, y_offset=6, text='cell')
+    cell = Label(x=0.4444, y=0.0617, x_offset=-10, y_offset=6, text="cell")
     p.add_layout(cell)
 
     p.scatter(0.4545, 0.0606, size=8, marker="circle")
-    hemi = Label(x=0.4545, y=0.0606, x_offset=-14, y_offset=-20, text='hemi')
+    hemi = Label(x=0.4545, y=0.0606, x_offset=-14, y_offset=-20, text="hemi")
     p.add_layout(hemi)
 
     p.scatter(0.6977, 0.0543, size=8, marker="circle")
-    ligc = Label(x=0.6977, y=0.0543, x_offset=-14, y_offset=-20, text='ligc')
+    ligc = Label(x=0.6977, y=0.0543, x_offset=-14, y_offset=-20, text="ligc")
     p.add_layout(ligc)
 
     p.scatter(0.6055, 0.0642, size=8, marker="circle")
-    ligh = Label(x=0.6055, y=0.0642, x_offset=-14, y_offset=6, text='ligh')
+    ligh = Label(x=0.6055, y=0.0642, x_offset=-14, y_offset=6, text="ligh")
     p.add_layout(ligh)
 
     p.scatter(0.5687, 0.0521, size=8, marker="circle")
-    ligo = Label(x=0.5687, y=0.0521, x_offset=-14, y_offset=-20, text='ligo')
+    ligo = Label(x=0.5687, y=0.0521, x_offset=-14, y_offset=-20, text="ligo")
     p.add_layout(ligo)
 
     p.scatter(0.5921, 0.0395, size=8, marker="circle")
-    tann = Label(x=0.5921, y=0.0395, x_offset=10, y_offset=-10, text='tann')
+    tann = Label(x=0.5921, y=0.0395, x_offset=10, y_offset=-10, text="tann")
     p.add_layout(tann)
 
     p.scatter(0.7634, 0.1116, size=8, marker="circle")
-    tgl = Label(x=0.7634, y=0.1116, x_offset=-8, y_offset=-20, text='tgl')
+    tgl = Label(x=0.7634, y=0.1116, x_offset=-8, y_offset=-20, text="tgl")
     p.add_layout(tgl)
 
     polygon = PolyAnnotation(
-        fill_color='gray',
+        fill_color="gray",
         fill_alpha=0.2,
         xs=[0.4444, 0.5921, 0.6977, 0.7634],
-        ys=[0.0617, 0.0395, 0.0543, 0.1116])
+        ys=[0.0617, 0.0395, 0.0543, 0.1116],
+    )
     p.add_layout(polygon)
 
-    p.legend.location = 'top_left'
+    p.legend.location = "top_left"
 
     return p

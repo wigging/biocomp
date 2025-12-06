@@ -67,8 +67,17 @@ if st.checkbox("Optimize"):
     bc, splits = calc_opt_biocomp(yc, yh, ychem, yh2o, yash)
 else:
     # Biomass composition using given splitting parameters
-    bc = cm.biocomp(yc, yh, yh2o=yh2o, yash=yash, alpha=alpha, beta=beta,
-                    gamma=gamma, delta=delta, epsilon=epsilon)
+    bc = cm.biocomp(
+        yc,
+        yh,
+        yh2o=yh2o,
+        yash=yash,
+        alpha=alpha,
+        beta=beta,
+        gamma=gamma,
+        delta=delta,
+        epsilon=epsilon,
+    )
 
     splits = [alpha, beta, gamma, delta, epsilon]
 
@@ -77,8 +86,10 @@ st.header("Results")
 # Format results for viewing on the web page
 splits = [round(s, 2) for s in splits]
 
-st.markdown(f"Using splitting parameters α = {splits[0]}, β = {splits[1]},\
-    γ = {splits[2]}, δ = {splits[3]}, and ε = {splits[4]}")
+st.markdown(
+    f"Using splitting parameters α = {splits[0]}, β = {splits[1]},\
+    γ = {splits[2]}, δ = {splits[3]}, and ε = {splits[4]}"
+)
 
 d = {
     "Biomass": ["CELL", "HEMI", "LIG-C", "LIG-H", "LIG-O", "TANN", "TGL"],
@@ -86,14 +97,14 @@ d = {
     "X (wet)": [i for i in bc["x_wet"]],
     "Y (daf)": [i for i in bc["y_daf"]],
     "Y (wet)": [i for i in bc["y_wet"]],
-    "Y (wetash)": [i for i in bc["y_wetash"]]
+    "Y (wetash)": [i for i in bc["y_wetash"]],
 }
 
 st.table(d)
 
 st.space("medium")
 
-fig = plot_biocomp(yc, yh, bc['y_rm1'], bc['y_rm2'], bc['y_rm3'])
+fig = plot_biocomp(yc, yh, bc["y_rm1"], bc["y_rm2"], bc["y_rm3"])
 streamlit_bokeh(fig, theme="light_minimal", key="plot")
 
 # CSS to inject contained in a string
@@ -106,4 +117,3 @@ tbody th {display:none}
 
 # Inject CSS with Markdown
 st.markdown(hide_table_row_index, unsafe_allow_html=True)
-

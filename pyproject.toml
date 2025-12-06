@@ -9,3 +9,6 @@ dependencies = [
     "streamlit>=1.52.1",
     "streamlit-bokeh>=3.8.0",
 ]
+
+[tool.ruff]
+line-length = 100

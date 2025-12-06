@@ -5,9 +5,9 @@ import streamlit as st
 st.title("About")
 
 p = """
-<p>BioComp is a web tool for estimating biomass composition using ultimate and chemical analysis data. Calculations are based on the biomass characterization method discussed in the Debiagi, Ranzi, et al. papers listed below. Also, see the <a href="https://chemics.readthedocs.io/en/latest/biomass_composition.html">documentation</a> for the Chemics biocomp() function for implementation details of the characterization procedure.
+<p>BioComp is a web tool for estimating biomass composition using ultimate and chemical analysis data. Calculations are based on the biomass characterization method discussed in the Debiagi, Ranzi, et al. papers listed below. Also, see the <a href="https://chemics.readthedocs.io/en/latest/api/biomass_composition.html">documentation</a> for the Chemics biocomp() function for implementation details of the characterization procedure.
 
-<p>The BioComp source code is available on <a href="https://github.com/wigging/biocomp">GitHub</a>. Submit a Pull Request if you would like to contribute to the project. Questions and other comments can be submitted on the GitHub <a href="https://github.com/wigging/biocomp/issues">Issues</a> page. You can also contact Gavin Wiggins via <a href="mailto:wiggingATmeDOTcom" onclick="this.href=this.href.replace(/AT/,'&#64;').replace(/DOT/,'&#46;')">Email</a> or <a href="https://fosstodon.org/@wigging">Mastodon</a>.</p>
+<p>The BioComp source code is available on <a href="https://github.com/wigging/biocomp">GitHub</a>. Submit a Pull Request if you would like to contribute to the project. Questions and other comments can be submitted on the GitHub <a href="https://github.com/wigging/biocomp/issues">Issues</a> page. You can also contact Gavin Wiggins via <a href="mailto:mailATgavinwDOTme" onclick="this.href=this.href.replace(/AT/,'&#64;').replace(/DOT/,'&#46;')">Email</a> or <a href="https://fosstodon.org/@wigging">Mastodon</a>.</p>
 
 <h2>References</h2>
 
