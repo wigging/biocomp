@@ -32,16 +32,16 @@ name = "biocomp"
 version = "25.12"
 source = { virtual = "." }
 dependencies = [
-    { name = "bokeh" },
     { name = "chemics" },
     { name = "streamlit" },
+    { name = "streamlit-bokeh" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "bokeh", specifier = ">=3.8.1" },
     { name = "chemics", specifier = ">=24.1" },
     { name = "streamlit", specifier = ">=1.52.1" },
+    { name = "streamlit-bokeh", specifier = ">=3.8.0" },
 ]
 
 [[package]]
@@ -55,7 +55,7 @@ wheels = [
 
 [[package]]
 name = "bokeh"
-version = "3.8.1"
+version = "3.8.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "contourpy" },
@@ -69,9 +69,9 @@ dependencies = [
     { name = "tornado", marker = "sys_platform != 'emscripten'" },
     { name = "xyzservices" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/de/42/777c0627dbd78a2a7c6c6a1c3327e8a787ec99a4b84ae93245ce49c96af7/bokeh-3.8.1.tar.gz", hash = "sha256:40df8e632de367399d06979cbd76c9e68a133a3138e1adde37c4a4715ecb4d6e", size = 6529791, upload-time = "2025-11-07T20:50:59.565Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/78/bd/8455ecfaa8100dbfbb2af40061c689a7a9c808f4f8c9582f0efd0c8c9a19/bokeh-3.8.0.tar.gz", hash = "sha256:bfdf5e9df910653b097f70cd38f4c2399d91af6e54a618126e2387cc33c9ec03", size = 6529746, upload-time = "2025-08-29T12:16:55.005Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5d/e7/b18bee0772d49c0f78d57f15a68e85257abf7224d9b910706abe8bd1dc0f/bokeh-3.8.1-py3-none-any.whl", hash = "sha256:89a66cb8bfe85e91bce144e3ccf3c4a6f0f1347e7006282972568ea0ecacbb00", size = 7206137, upload-time = "2025-11-07T20:50:58.108Z" },
+    { url = "https://files.pythonhosted.org/packages/96/9a/8e641b5415e12036d8a206147b8229d917a767b7d939521458d90feddcf5/bokeh-3.8.0-py3-none-any.whl", hash = "sha256:117c5e559231ad39fef87891a1a1b62b3bfefbaa47d536023537338f46015841", size = 7205343, upload-time = "2025-08-29T12:16:52.77Z" },
 ]
 
 [[package]]
@@ -984,6 +984,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/6f/ec/66ca1578587bbaaea5757a7f074d3f762fff8d782ffb4497a83c5722aa44/streamlit-1.52.1.tar.gz", hash = "sha256:b036a71866b893c97fdebaa2a2ebd21ebf2af7daea4b3abe783a57b26f55b3ca", size = 8582829, upload-time = "2025-12-05T18:55:42.006Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d0/d4/cdafd4cc940937410f465ca7a77dd34237182c2ddece624e08db959496f8/streamlit-1.52.1-py3-none-any.whl", hash = "sha256:97fee2c3421d350fd65548e45a20f506ec1b651d78f95ecacbc0c2f9f838081c", size = 9024748, upload-time = "2025-12-05T18:55:39.713Z" },
+]
+
+[[package]]
+name = "streamlit-bokeh"
+version = "3.8.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "bokeh" },
+    { name = "streamlit" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e2/78/04ce151e9f35dfe5069659678f3e01d1a0a8641ef96a888580820eee197a/streamlit_bokeh-3.8.0.tar.gz", hash = "sha256:539d05336ad592278b856626499fc82ef4c55c30b7c64400d3786f3ba6dbe78c", size = 1855112, upload-time = "2025-09-02T21:11:58.339Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4b/a7/13e3fd79e08ffa4618d034c998335936788d9804c50c8ebafdd4557e8ece/streamlit_bokeh-3.8.0-py3-none-any.whl", hash = "sha256:26a6a220162c21a0e2fb368d6f98096b9fb5b3fa403358368da7ca77a7f8a6ec", size = 1863809, upload-time = "2025-09-02T21:11:56.837Z" },
 ]
 
 [[package]]
