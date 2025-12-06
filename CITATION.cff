@@ -4,5 +4,5 @@ authors:
 - family-names: "Wiggins"
   given-names: "Gavin"
 title: "BioComp: A web tool for estimating biomass composition"
-version: 24.09
+version: 25.12
 url: "https://github.com/wigging/biocomp"

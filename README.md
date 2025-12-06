@@ -6,18 +6,11 @@ View the BioComp web tool at https://biocomptool.streamlit.app
 
 ## Local installation
 
-To install BioComp on your local machine, download or clone this repository then create and activate a Python virtual environment. Install the dependencies using `pip` then run the Streamlit web app using `streamlit run`. See the terminal commands below. Local installation is only guaranteed for Python 3.10 due to version limits on Bokeh and NumPy which are imposed by Streamlit.
+To install and run BioComp on your computer, first install uv using the instructions at https://docs.astral.sh/uv. Next, clone this repository then run the Streamlit web application using the uv command shown below.
 
 ```bash
-# Create and activate the Python virtual environment
-$ python -m venv venv
-$ source venv/bin/activate
-
-# Install the dependencies
-(venv) $ pip install -r requirements.txt
-
-# Run the web app
-(venv) $ streamlit run 🌳_BioComp.py
+cd biocomp
+uv run streamlit run src/app
 ```
 
 ## Usage
@@ -28,7 +21,7 @@ See the [Usage page](https://biocomptool.streamlit.app/Usage) for information ab
 
 To cite this work, use the "Cite this repository" feature available on the right side of this repository page or use the reference text given below.
 
-> Gavin Wiggins. BioComp: A web tool for estimating biomass composition. Version 24.09. Available at https://github.com/wigging/biocomp.
+> Gavin Wiggins. BioComp: A web tool for estimating biomass composition. Version 25.12. Available at https://github.com/wigging/biocomp.
 
 ## References
 
