@@ -4,7 +4,7 @@ import chemics as cm
 import streamlit as st
 from streamlit_bokeh import streamlit_bokeh
 
-from biocomp import calc_opt_biocomp
+from optimize_biocomp import calc_opt_biocomp
 from plotter import plot_biocomp
 
 
