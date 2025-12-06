@@ -27,15 +27,14 @@ def plot_biocomp(yc, yh, yrm1, yrm2, yrm3):
     p = figure(
         x_axis_label='Carbon mass fraction, daf basis [-]',
         y_axis_label='Hydrogen mass fraction, daf basis [-]',
-        height_policy='max',
-        width_policy='max',
-        tooltips=[('(x, y)', '($x{.00}, $y{.00})')])
+        tooltips=[('(x, y)', '($x{.00}, $y{.00})')]
+    )
 
-    p.triangle(yc, yh, color='blueviolet', size=10, legend_label='biomass')
+    p.scatter(yc, yh, color="blueviolet", size=10, legend_label="biomass", marker="triangle")
 
-    p.square(yrm1[0], yrm1[1], color='goldenrod', size=8, legend_label='rm1')
-    p.square(yrm2[0], yrm2[1], color='limegreen', size=8, legend_label='rm2')
-    p.square(yrm3[0], yrm3[1], color='indianred', size=8, legend_label='rm3')
+    p.scatter(yrm1[0], yrm1[1], color='goldenrod', size=8, legend_label='rm1', marker="square")
+    p.scatter(yrm2[0], yrm2[1], color='limegreen', size=8, legend_label='rm2', marker="square")
+    p.scatter(yrm3[0], yrm3[1], color='indianred', size=8, legend_label='rm3', marker="square")
 
     p.line(
         [yrm1[0], yrm2[0], yrm3[0], yrm1[0]],
@@ -44,31 +43,31 @@ def plot_biocomp(yc, yh, yrm1, yrm2, yrm3):
         line_width=2,
         line_dash='dotted')
 
-    p.circle(0.4444, 0.0617, size=8)
+    p.scatter(0.4444, 0.0617, size=8, marker="circle")
     cell = Label(x=0.4444, y=0.0617, x_offset=-10, y_offset=6, text='cell')
     p.add_layout(cell)
 
-    p.circle(0.4545, 0.0606, size=8)
+    p.scatter(0.4545, 0.0606, size=8, marker="circle")
     hemi = Label(x=0.4545, y=0.0606, x_offset=-14, y_offset=-20, text='hemi')
     p.add_layout(hemi)
 
-    p.circle(0.6977, 0.0543, size=8)
+    p.scatter(0.6977, 0.0543, size=8, marker="circle")
     ligc = Label(x=0.6977, y=0.0543, x_offset=-14, y_offset=-20, text='ligc')
     p.add_layout(ligc)
 
-    p.circle(0.6055, 0.0642, size=8)
+    p.scatter(0.6055, 0.0642, size=8, marker="circle")
     ligh = Label(x=0.6055, y=0.0642, x_offset=-14, y_offset=6, text='ligh')
     p.add_layout(ligh)
 
-    p.circle(0.5687, 0.0521, size=8)
+    p.scatter(0.5687, 0.0521, size=8, marker="circle")
     ligo = Label(x=0.5687, y=0.0521, x_offset=-14, y_offset=-20, text='ligo')
     p.add_layout(ligo)
 
-    p.circle(0.5921, 0.0395, size=8)
+    p.scatter(0.5921, 0.0395, size=8, marker="circle")
     tann = Label(x=0.5921, y=0.0395, x_offset=10, y_offset=-10, text='tann')
     p.add_layout(tann)
 
-    p.circle(0.7634, 0.1116, size=8)
+    p.scatter(0.7634, 0.1116, size=8, marker="circle")
     tgl = Label(x=0.7634, y=0.1116, x_offset=-8, y_offset=-20, text='tgl')
     p.add_layout(tgl)
 

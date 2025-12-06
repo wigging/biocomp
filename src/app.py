@@ -2,6 +2,7 @@ import chemics as cm
 import streamlit as st
 from biocomp import calc_opt_biocomp
 from plotter import plot_biocomp
+from streamlit_bokeh import streamlit_bokeh
 
 
 def main():
@@ -89,8 +90,10 @@ def main():
 
     st.table(d)
 
+    st.space("medium")
+
     fig = plot_biocomp(yc, yh, bc['y_rm1'], bc['y_rm2'], bc['y_rm3'])
-    st.bokeh_chart(fig)
+    streamlit_bokeh(fig, theme="light_minimal", key="plot")
 
     # CSS to inject contained in a string
     hide_table_row_index = """
