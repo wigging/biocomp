@@ -1,0 +1,11 @@
+[project]
+name = "biocomp"
+version = "25.12"
+description = "BioComp Streamlit application"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "bokeh>=3.8.1",
+    "chemics>=24.1",
+    "streamlit>=1.52.1",
+]
