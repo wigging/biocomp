@@ -1,3 +1,5 @@
+"""Usage page."""
+
 import streamlit as st
 
 st.title("Usage")
