@@ -1,0 +1,87 @@
+<div
+  id="results"
+  data-yc="{{ yc | tojson }}"
+  data-yh="{{ yh | tojson }}"
+  data-rm1="{{ bc['y_rm1'] | tojson }}"
+  data-rm2="{{ bc['y_rm2'] | tojson }}"
+  data-rm3="{{ bc['y_rm3'] | tojson }}"
+>
+  <p>
+    Using splitting parameters:<br />
+    α = {{ splits[0] }}, β = {{ splits[1] }}, γ = {{ splits[2] }}, δ = {{
+    splits[3] }}, and ε = {{ splits[4] }}
+  </p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Biomass</th>
+        <th>X (daf)</th>
+        <th>X (wet)</th>
+        <th>Y (daf)</th>
+        <th>Y (wet)</th>
+        <th>Y (wetash)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CELL</td>
+        <td>{{ bc["x_daf"][0] | round(4) }}</td>
+        <td>{{ bc["x_wet"][0] | round(4) }}</td>
+        <td>{{ bc["y_daf"][0] | round(4) }}</td>
+        <td>{{ bc["y_wet"][0] | round(4) }}</td>
+        <td>{{ bc["y_wetash"][0] | round(4) }}</td>
+      </tr>
+      <tr>
+        <td>HEMI</td>
+        <td>{{ bc["x_daf"][1] | round(4) }}</td>
+        <td>{{ bc["x_wet"][1] | round(4) }}</td>
+        <td>{{ bc["y_daf"][1] | round(4) }}</td>
+        <td>{{ bc["y_wet"][1] | round(4) }}</td>
+        <td>{{ bc["y_wetash"][1] | round(4) }}</td>
+      </tr>
+      <tr>
+        <td>LIG-C</td>
+        <td>{{ bc["x_daf"][2] | round(4) }}</td>
+        <td>{{ bc["x_wet"][2] | round(4) }}</td>
+        <td>{{ bc["y_daf"][2] | round(4) }}</td>
+        <td>{{ bc["y_wet"][2] | round(4) }}</td>
+        <td>{{ bc["y_wetash"][2] | round(4) }}</td>
+      </tr>
+      <tr>
+        <td>LIG-H</td>
+        <td>{{ bc["x_daf"][3] | round(4) }}</td>
+        <td>{{ bc["x_wet"][3] | round(4) }}</td>
+        <td>{{ bc["y_daf"][3] | round(4) }}</td>
+        <td>{{ bc["y_wet"][3] | round(4) }}</td>
+        <td>{{ bc["y_wetash"][3] | round(4) }}</td>
+      </tr>
+      <tr>
+        <td>LIG-O</td>
+        <td>{{ bc["x_daf"][4] | round(4) }}</td>
+        <td>{{ bc["x_wet"][4] | round(4) }}</td>
+        <td>{{ bc["y_daf"][4] | round(4) }}</td>
+        <td>{{ bc["y_wet"][4] | round(4) }}</td>
+        <td>{{ bc["y_wetash"][4] | round(4) }}</td>
+      </tr>
+      <tr>
+        <td>TANN</td>
+        <td>{{ bc["x_daf"][5] | round(4) }}</td>
+        <td>{{ bc["x_wet"][5] | round(4) }}</td>
+        <td>{{ bc["y_daf"][5] | round(4) }}</td>
+        <td>{{ bc["y_wet"][5] | round(4) }}</td>
+        <td>{{ bc["y_wetash"][5] | round(4) }}</td>
+      </tr>
+      <tr>
+        <td>TGL</td>
+        <td>{{ bc["x_daf"][6] | round(4) }}</td>
+        <td>{{ bc["x_wet"][6] | round(4) }}</td>
+        <td>{{ bc["y_daf"][6] | round(4) }}</td>
+        <td>{{ bc["y_wet"][6] | round(4) }}</td>
+        <td>{{ bc["y_wetash"][6] | round(4) }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="graph" style="max-width:600px;" hx-preserve></div>
+</div>
