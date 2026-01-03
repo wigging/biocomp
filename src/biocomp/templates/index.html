@@ -62,3 +62,40 @@
               <div class="col-md">
                 <label class="form-label" for="alphaInput">Alpha, &#945; [-]</label>
                 <input type="number" class="form-control mb-3" id="alphaInput" name="alpha" value="0.60">
+
+                <label class="form-label" for="betaInput">Beta, &#946; [-]</label>
+                <input type="number" class="form-control mb-3" id="betaInput" name="beta" value="0.80">
+
+                <label class="form-label" for="gammaInput">Gamma, &#947; [-]</label>
+                <input type="number" class="form-control mb-3" id="gammaInput" name="gamma" value="0.80">
+              </div>
+              <div class="col-md">
+                <label class="form-label" for="deltaInput">Delta, &#948; [-]</label>
+                <input type="number" class="form-control mb-3" id="deltaInput" name="delta" value="1.00">
+
+                <label class="form-label" for="epsilonInput">Epsilon, &#949; [-]</label>
+                <input type="number" class="form-control mb-3" id="epsilonInput" name="epsilon" value="1.00">
+              </div>
+            </div>
+
+            <div class="form-check mb-4">
+              <input type="checkbox" class="form-check-input" id="optInput" name="optimize">
+              <label class="form-check-label" for="optInput">Optimize splitting parameters</label>
+            </div>
+            <button type="submit" class="btn btn-primary mb-5">Submit</button>
+          </form>
+        </div>
+        <div class="col-md border-start ps-md-5">
+          <h3>Biomass composition</h3>
+          <div id="results">
+            <p>Submit the input parameters and view results here.</p>
+            <div id="graph" style="max-width:600px;" hx-preserve></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    {% include 'footer.html' %}
+    <script src="https://cdn.plot.ly/plotly-3.3.0.min.js" charset="utf-8"></script>
+    <script src="{{ url_for('static', filename='graph.js') }}"></script>
+  </body>
+</html>
