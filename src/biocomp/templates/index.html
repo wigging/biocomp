@@ -16,14 +16,13 @@
   <div class="row">
     <div class="col-md-4 pe-md-5">
       <form hx-post="/params" hx-target="#results" hx-swap="outerHTML">
-
         <h3>Ultimate analysis</h3>
         <div class="row">
           <div class="col-md">
-            <label class="form-label" for="carbonInput">Carbon, C [&percnt;]</label>
+            <label class="form-label" for="carbonInput">Carbon, C [&percnt;] *</label>
             <input type="number" class="form-control mb-3" id="carbonInput" name="carbon" value="53">
 
-            <label class="form-label" for="hydrogenInput">Hydrogen, H [&percnt;]</label>
+            <label class="form-label" for="hydrogenInput">Hydrogen, H [&percnt;] *</label>
             <input type="number" class="form-control mb-3" id="hydrogenInput" name="hydrogen" value="6">
           </div>
           <div class="col-md">
@@ -75,13 +74,87 @@
           <input type="checkbox" class="form-check-input" id="optInput" name="optimize">
           <label class="form-check-label" for="optInput">Optimize splitting parameters</label>
         </div>
+
         <button type="submit" class="btn btn-primary mb-5">Submit</button>
       </form>
     </div>
     <div class="col-md border-start ps-md-5">
       <h3>Biomass composition</h3>
+
       <div id="results">
         <p>Submit the input parameters and view results here.</p>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Biomass</th>
+              <th>X (daf)</th>
+              <th>X (wet)</th>
+              <th>Y (daf)</th>
+              <th>Y (wet)</th>
+              <th>Y (wetash)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CELL</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+            <tr>
+              <td>HEMI</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+            <tr>
+              <td>LIG-C</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+            <tr>
+              <td>LIG-H</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+            <tr>
+              <td>LIG-O</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+            <tr>
+              <td>TANN</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+            <tr>
+              <td>TGL</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+          </tbody>
+        </table>
+
         <div id="graph" style="max-width:600px;" hx-preserve></div>
       </div>
     </div>

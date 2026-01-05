@@ -6,10 +6,10 @@ function newGraph(yc, yh, rm1, rm2, rm3) {
   const trace1 = {
     x: [0.4444, 0.5921, 0.6977, 0.7634],
     y: [0.0617, 0.0395, 0.0543, 0.1116],
-    name: "Biomass Region",
+    name: "Characterization Region",
     mode: "markers+text",
     type: "scatter",
-    text: ["cell", "tann", "ligc", "tgl"],
+    text: ["CELL", "TANN", "LIG-C", "TGL"],
     textposition: ["top", "bottom", "bottom", "right"],
     fill: "toself",
   };
@@ -19,7 +19,7 @@ function newGraph(yc, yh, rm1, rm2, rm3) {
     y: [0.0606, 0.0521, 0.0642],
     mode: "markers+text",
     type: "scatter",
-    text: ["hemi", "ligo", "ligh"],
+    text: ["HEMI", "LIG-O", "LIG-H"],
     textposition: ["bottom", "bottom", "top"],
     showlegend: false,
   };
@@ -76,7 +76,7 @@ function newGraph(yc, yh, rm1, rm2, rm3) {
     },
   };
 
-  const config = { responsive: true };
+  const config = { displaylogo: false, responsive: true };
 
   Plotly.newPlot("graph", [trace1, trace2, trace3, trace4], layout, config);
 }
