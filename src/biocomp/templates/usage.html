@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand border-bottom mb-4">
+  <div class="container">
+    <span class="navbar-brand">🌳 BioComp</span>
+    <div class="navbar-nav me-auto">
+      <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+      <a class="nav-link" href="{{ url_for('about') }}">About</a>
+      <a class="nav-link active" href="{{ url_for('usage') }}">Usage</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Usage</h2>
+      <p>Here.</p>
+    </div>
+  </div>
+</main>
+{% endblock %}
