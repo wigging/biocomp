@@ -2,7 +2,7 @@
 
 BioComp is a web application for estimating biomass composition from ultimate and chemical analysis data. The code is based on the biomass characterization method discussed in the Ranzi, Debiagi, et al. papers referenced below. The estimated biomass composition is for use with the Ranzi, Debiagi, et al. biomass pyrolysis kinetics scheme.
 
-View the BioComp web app at **here**.
+View the BioComp web app at <https://biocomp.gavinw.me>.
 
 ## Installation
 
@@ -23,13 +23,13 @@ uv run quart --app biocomp.app run
 
 ## Documentation
 
-Documentation about how to use BioComp is available at **here**.
+See the About and Usage pages in the BioComp app for documentation.
 
 ## Citation
 
 To cite this work, use the "Cite this repository" feature available on the right side of this repository page or use the reference text given below.
 
-> Gavin Wiggins. BioComp: A web application for estimating biomass composition. Version 25.12. Available at https://github.com/wigging/biocomp.
+> Gavin Wiggins. BioComp: A web application for estimating biomass composition. Version 26.1. Available at https://github.com/wigging/biocomp.
 
 ## References
 

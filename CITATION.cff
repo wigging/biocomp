@@ -3,6 +3,6 @@ message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Wiggins"
   given-names: "Gavin"
-title: "BioComp: A web tool for estimating biomass composition"
-version: 25.12
+title: "BioComp: A web application for estimating biomass composition"
+version: 26.1
 url: "https://github.com/wigging/biocomp"

@@ -13,7 +13,7 @@ wheels = [
 
 [[package]]
 name = "biocomp"
-version = "25.12"
+version = "26.1"
 source = { editable = "." }
 dependencies = [
     { name = "chemics" },
