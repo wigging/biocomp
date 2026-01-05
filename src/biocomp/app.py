@@ -21,6 +21,11 @@ async def about():
     return await render_template("about.html")
 
 
+@app.get("/usage")
+async def usage():
+    return await render_template("usage.html")
+
+
 @app.post("/params")
 async def params():
     form = await request.form
