@@ -6,9 +6,16 @@ uv run quart --app src/biocomp2/app.py run
 
 from quart import Quart, render_template, request
 
+import importlib.metadata
+
 from .calc_biocomp import calc_biocomp
 
 app = Quart(__name__)
+
+
+@app.context_processor
+def biocomp_version():
+    return {"version": importlib.metadata.version("biocomp")}
 
 
 @app.get("/")
