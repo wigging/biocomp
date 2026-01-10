@@ -1,7 +1,7 @@
 """Module for the Quart web application.
 
 Run the Quart web app with
-uv run quart --app src/biocomp2/app.py run
+uv run quart --app biocomp.app run
 """
 
 from quart import Quart, render_template, request
@@ -23,14 +23,9 @@ async def index():
     return await render_template("index.html")
 
 
-@app.get("/about")
-async def about():
-    return await render_template("about.html")
-
-
-@app.get("/usage")
-async def usage():
-    return await render_template("usage.html")
+@app.get("/docs")
+async def docs():
+    return await render_template("docs.html")
 
 
 @app.post("/params")
