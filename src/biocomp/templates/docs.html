@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <nav class="navbar navbar-expand border-bottom mb-5">
   <div class="container">
     <span class="navbar-brand">🌳 BioComp</span>
@@ -32,7 +30,7 @@
         <a href="https://github.com/wigging/biocomp">GitHub</a>. Submit a Pull Request if you would
         like to contribute to the project. Questions and other comments can be submitted on the
         GitHub <a href="https://github.com/wigging/biocomp/issues">Issues</a> page. You can also
-        contact Gavin Wiggins via
+        contact the developer of BioComp, Gavin Wiggins, via
         <a
           href="mailto:mailATgavinwDOTme"
           onclick="this.href = this.href.replace(/AT/, '&#64;').replace(/DOT/, '&#46;')">
@@ -41,25 +39,42 @@
         or <a href="https://fosstodon.org/@wigging">Mastodon</a>.
       </p>
 
+      <h2>Quick start</h2>
+
+      <p>
+        Just click the Submit button to view results for the default input parameters. The results
+        are displayed in a table that represents the biomass composition. A graph is also displayed
+        that compares the biomass to the reference mixtures. Read the sections below to learn more.
+      </p>
+
       <h2>Parameters</h2>
 
       <p>
-        A description of the input parameters are given below. The ultimate and chemical analysis
+        A description of the input parameters is given next. The ultimate and chemical analysis
         parameters refer to measured data for a particular biomass feedstock. The only required
         parameters for BioComp are carbon and hydrogen from ultimate analysis data. However, it is
         recommended to provide as much of the parameters as possible for best results.
       </p>
 
-      <p>Ultimate analysis</p>
+      <h3>Ultimate analysis</h3>
+
+      <p>
+        The first group of input parameters for BioComp is the ultimate analysis values of the
+        biomass. The values must be given as mass percent on a dry ash-free basis (C and H) or as
+        received basis (H₂O and Ash). The carbon and hydrogen values are required. The water and ash
+        values are used for converting the results to wet and wet-ash bases. If you are not
+        interested in the results for the wet basis or wet ash basis then just input 0 for these
+        values.
+      </p>
 
       <ul>
-        <li>Carbon % - mass percent of carbon (C), dry ash-free basis</li>
-        <li>Hydrogen % - mass percent of hydrogen (H), dry ash-free basis</li>
-        <li>H₂O % - mass percent of water, as received basis</li>
-        <li>Ash % - mass percent of ash, as received basis</li>
+        <li>Carbon - mass percent of carbon (C), dry ash-free basis</li>
+        <li>Hydrogen - mass percent of hydrogen (H), dry ash-free basis</li>
+        <li>H₂O - mass percent of water, as received basis</li>
+        <li>Ash - mass percent of ash, as received basis</li>
       </ul>
 
-      <p>Chemical analysis</p>
+      <h3>Chemical analysis</h3>
 
       <ul>
         <li>Cellulose % - mass percent of cellulose (CELL), dry ash-free basis</li>
@@ -67,7 +82,7 @@
         <li>Lignin % - mass percent of total lignin, dry ash-free basis</li>
       </ul>
 
-      <p>Splitting parameters</p>
+      <h3>Splitting parameters</h3>
 
       <ul>
         <li>α - molar ratio of cellulose and hemicellulose</li>
@@ -77,7 +92,7 @@
         <li>ε - molar ratio of lignins (LIG-O and LIG-C) and extractive TANN</li>
       </ul>
 
-      <p>Optimize</p>
+      <h3>Optimize</h3>
 
       <ul>
         <li>
