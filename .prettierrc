@@ -1,0 +1,6 @@
+{
+  "bracketSameLine": true,
+  "htmlWhitespaceSensitivity": "strict",
+  "objectWrap": "collapse",
+  "printWidth": 100
+}
