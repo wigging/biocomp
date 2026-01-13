@@ -4,7 +4,7 @@
 <nav class="navbar navbar-expand border-bottom mb-5">
   <div class="container">
     <span class="navbar-brand">🌳 BioComp</span>
-    <div class="navbar-nav me-auto">
+    <div class="navbar-nav me-auto" hx-boost="true">
       <a class="nav-link active" href="{{ url_for('index') }}">Home</a>
       <a class="nav-link" href="{{ url_for('docs') }}">Docs</a>
     </div>
@@ -18,18 +18,18 @@
         <h3>Ultimate analysis</h3>
         <div class="row">
           <div class="col-md">
-            <label class="form-label" for="carbonInput">Carbon, C [&percnt;] *</label>
-            <input type="number" class="form-control mb-3" id="carbonInput" name="carbon" value="53">
+            <label class="form-label" for="carbonInput">Carbon, C [&percnt;]</label>
+            <input type="number" class="form-control mb-3" id="carbonInput" name="carbon" value="53" min="45" max="75" step="0.1">
 
-            <label class="form-label" for="hydrogenInput">Hydrogen, H [&percnt;] *</label>
-            <input type="number" class="form-control mb-3" id="hydrogenInput" name="hydrogen" value="6">
+            <label class="form-label" for="hydrogenInput">Hydrogen, H [&percnt;]</label>
+            <input type="number" class="form-control mb-3" id="hydrogenInput" name="hydrogen" value="6" min="4" max="8" step="0.1">
           </div>
           <div class="col-md">
             <label class="form-label" for="waterInput">Water, H<sub>2</sub>O [&percnt;]</label>
-            <input type="number" class="form-control mb-3" id="waterInput" name="water" value="2">
+            <input type="number" class="form-control mb-3" id="waterInput" name="water" value="2" min="0" max="50">
 
             <label class="form-label" for="ashInput">Ash [&percnt;]</label>
-            <input type="number" class="form-control mb-3" id="ashInput" name="ash" value="2">
+            <input type="number" class="form-control mb-3" id="ashInput" name="ash" value="2" min="0" max="50">
           </div>
         </div>
 
@@ -37,14 +37,23 @@
         <div class="row">
           <div class="col-md">
             <label class="form-label" for="cellInput">Cellulose [&percnt;]</label>
-            <input type="number" class="form-control mb-3" id="cellInput" name="cellulose" value="28.9">
+            <input type="number" class="form-control mb-3" id="cellInput" name="cellulose" value="28.9" min="10" max="50" step="0.1">
 
             <label class="form-label" for="hemiInput">Hemicellulose [&percnt;]</label>
-            <input type="number" class="form-control mb-3" id="hemiInput" name="hemicellulose" value="22">
+            <input type="number" class="form-control mb-3" id="hemiInput" name="hemicellulose" value="22" min="10" max="50" step="0.1">
           </div>
           <div class="col-md">
             <label class="form-label" for="ligninInput">Lignin [&percnt;]</label>
-            <input type="number" class="form-control mb-3" id="ligninInput" name="lignin" value="36.5">
+            <input type="number" class="form-control mb-3" id="ligninInput" name="lignin" value="36.5" min="10" max="50" step="0.1">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="optInput" name="optimize">
+              <label class="form-check-label" for="optInput">Optimize splitting parameters</label>
+            </div>
           </div>
         </div>
 
@@ -52,26 +61,21 @@
         <div class="row">
           <div class="col-md">
             <label class="form-label" for="alphaInput">Alpha, &#945; [-]</label>
-            <input type="number" class="form-control mb-3" id="alphaInput" name="alpha" value="0.60">
+            <input type="number" class="form-control mb-3" id="alphaInput" name="alpha" value="0.60" min="0" max="1" step="0.01">
 
             <label class="form-label" for="betaInput">Beta, &#946; [-]</label>
-            <input type="number" class="form-control mb-3" id="betaInput" name="beta" value="0.80">
+            <input type="number" class="form-control mb-3" id="betaInput" name="beta" value="0.80" min="0" max="1" step="0.01">
 
             <label class="form-label" for="gammaInput">Gamma, &#947; [-]</label>
-            <input type="number" class="form-control mb-3" id="gammaInput" name="gamma" value="0.80">
+            <input type="number" class="form-control mb-3" id="gammaInput" name="gamma" value="0.80" min="0" max="1" step="0.01">
           </div>
           <div class="col-md">
             <label class="form-label" for="deltaInput">Delta, &#948; [-]</label>
-            <input type="number" class="form-control mb-3" id="deltaInput" name="delta" value="1.00">
+            <input type="number" class="form-control mb-3" id="deltaInput" name="delta" value="1.00" min="0" max="1" step="0.01">
 
             <label class="form-label" for="epsilonInput">Epsilon, &#949; [-]</label>
-            <input type="number" class="form-control mb-3" id="epsilonInput" name="epsilon" value="1.00">
+            <input type="number" class="form-control mb-3" id="epsilonInput" name="epsilon" value="1.00" min="0" max="1" step="0.01">
           </div>
-        </div>
-
-        <div class="form-check mb-4">
-          <input type="checkbox" class="form-check-input" id="optInput" name="optimize">
-          <label class="form-check-label" for="optInput">Optimize splitting parameters</label>
         </div>
 
         <button type="submit" class="btn btn-primary mb-5">Submit</button>

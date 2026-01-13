@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand border-bottom mb-5">
   <div class="container">
     <span class="navbar-brand">🌳 BioComp</span>
-    <div class="navbar-nav me-auto">
+    <div class="navbar-nav me-auto" hx-boost="true">
       <a class="nav-link" href="{{ url_for('index') }}">Home</a>
       <a class="nav-link active" href="{{ url_for('docs') }}">Docs</a>
     </div>
@@ -39,7 +39,7 @@
         or <a href="https://fosstodon.org/@wigging">Mastodon</a>.
       </p>
 
-      <h2>Quick start</h2>
+      <h2 class="mt-4">Quick start</h2>
 
       <p>
         Just click the Submit button to view results for the default input parameters. The results
@@ -47,24 +47,50 @@
         that compares the biomass to the reference mixtures. Read the sections below to learn more.
       </p>
 
-      <h2>Parameters</h2>
+      <h2 class="mt-4">Parameters</h2>
 
       <p>
-        A description of the input parameters is given next. The ultimate and chemical analysis
-        parameters refer to measured data for a particular biomass feedstock. The only required
-        parameters for BioComp are carbon and hydrogen from ultimate analysis data. However, it is
-        recommended to provide as much of the parameters as possible for best results.
+        There are several methods for providing input parameters to BioComp which are listed below.
+        The first method requires the least number of inputs while the last method requires the most
+        input. For best results, use method 3 to provide as many input parameters as possible.
+      </p>
+
+      <ol>
+        <li>
+          The easiest way to use BioComp is to just input the carbon (C) and hydrogen (H) mass
+          fractions of the biomass feedstock. Make the water and ash inputs zero and leave the
+          remaining inputs as their default values.
+        </li>
+        <li>
+          Another method is to provide all the ultimate analysis parameters of the biomass feedstock
+          including the water and ash content. This will provide the estimated biomass composition
+          results for the wet and wet-ash bases. Leave the remaining input parameters as their
+          default values.
+        </li>
+        <li>
+          If chemical analysis data is available for the biomass feedstock, then input the values
+          for cellulose, hemicellulose, and total lignin along with the ultimate analysis values.
+          Select the optimize splitting parameters checkbox to use the chemical analysis values to
+          improve the splitting parameters. This will ensure that the Y (daf) results align with the
+          estimated biomass composition.
+        </li>
+      </ol>
+
+      <p>
+        The splitting parameters should generally remain at their default values. If the estimated
+        biomass composition contains negative values, then adjust the splitting parameters until the
+        biomass is within the reference region on the graph.
       </p>
 
       <h3>Ultimate analysis</h3>
 
       <p>
-        The first group of input parameters for BioComp is the ultimate analysis values of the
-        biomass. The values must be given as mass percent on a dry ash-free basis (C and H) or as
-        received basis (H₂O and Ash). The carbon and hydrogen values are required. The water and ash
-        values are used for converting the results to wet and wet-ash bases. If you are not
-        interested in the results for the wet basis or wet ash basis then just input 0 for these
-        values.
+        The ultimate analysis parameters represent the utlimate analysis values of the biomass
+        feedstock that will be characterized by BioComp. The values must be given as mass percent on
+        a dry ash-free basis (C and H) or as received basis (H₂O and Ash). The carbon and hydrogen
+        values are required. The water and ash values are used for converting the results to wet and
+        wet-ash bases. If you are not interested in the results for the wet basis or wet ash basis
+        then just input zero for these values.
       </p>
 
       <ul>
@@ -76,11 +102,27 @@
 
       <h3>Chemical analysis</h3>
 
+      <p>
+        The chemical analysis parameters represent the chemical composition of the biomass feedstock
+        as cellulose, hemicellulose, and total lignin. The values must be given as mass percent on a
+        dry ash-free basis. The optimize checkbox must be selected to use the chemical analysis
+        values for the characterization procedure; otherwise, the values are ignored.
+      </p>
+
       <ul>
-        <li>Cellulose % - mass percent of cellulose (CELL), dry ash-free basis</li>
-        <li>Hemicellulose % - mass percent of hemicellulose (HEMI), dry ash-free basis</li>
-        <li>Lignin % - mass percent of total lignin, dry ash-free basis</li>
+        <li>Cellulose - mass percent of cellulose (CELL), dry ash-free basis</li>
+        <li>Hemicellulose - mass percent of hemicellulose (HEMI), dry ash-free basis</li>
+        <li>Lignin - mass percent of total lignin, dry ash-free basis</li>
       </ul>
+
+      <h3>Optimize splitting parameters</h3>
+
+      <p>
+        When the Optimize splitting parameters checkbox is enabled, the chemical analysis values are
+        used for the biomass characterization. This will adjust the splitting parameters so the Y
+        (daf) results match the given cellulose, hemicellulose, and total lignin values. If the
+        checkbox is not selected, the chemical analysis values are ignored.
+      </p>
 
       <h3>Splitting parameters</h3>
 
@@ -92,27 +134,13 @@
         <li>ε - molar ratio of lignins (LIG-O and LIG-C) and extractive TANN</li>
       </ul>
 
-      <h3>Optimize</h3>
-
-      <ul>
-        <li>
-          If selected, optimized splitting parameters are determined using the given ultimate and
-          chemical analysis values. The biomass composition is determined using the optimized
-          splitting parameters.
-        </li>
-        <li>
-          If not selected, the biomass composition is calculated using the given or default
-          splitting parameter values.
-        </li>
-      </ul>
-
-      <h2>Results</h2>
+      <h2 class="mt-4">Results</h2>
 
       <p>
         The results will appear after pressing the Enter (Return) key or clicking the Submit button.
       </p>
 
-      <h2>References</h2>
+      <h2 class="mt-4">References</h2>
 
       <p>The references for estimating biomass composition are given below.</p>
 
