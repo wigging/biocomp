@@ -93,6 +93,12 @@
         then just input zero for these values.
       </p>
 
+      <img
+        src="{{ url_for('static', filename='ult-analysis.png') }}"
+        class="figure-img img-fluid rounded shadow"
+        style="max-width: 300px; margin-bottom: 1.5rem"
+        alt="ultimate analysis" />
+
       <ul>
         <li>Carbon - mass percent of carbon (C), dry ash-free basis</li>
         <li>Hydrogen - mass percent of hydrogen (H), dry ash-free basis</li>
@@ -106,23 +112,22 @@
         The chemical analysis parameters represent the chemical composition of the biomass feedstock
         as cellulose, hemicellulose, and total lignin. The values must be given as mass percent on a
         dry ash-free basis. The optimize checkbox must be selected to use the chemical analysis
-        values for the characterization procedure; otherwise, the values are ignored.
+        values for the characterization procedure; otherwise, the values are ignored. This will
+        adjust the splitting parameters so the Y (daf) results match the given cellulose,
+        hemicellulose, and total lignin values.
       </p>
+
+      <img
+        src="{{ url_for('static', filename='chem-analysis.png') }}"
+        class="figure-img img-fluid rounded shadow"
+        style="max-width: 300px; margin-bottom: 1.5rem"
+        alt="chemical analysis" />
 
       <ul>
         <li>Cellulose - mass percent of cellulose (CELL), dry ash-free basis</li>
         <li>Hemicellulose - mass percent of hemicellulose (HEMI), dry ash-free basis</li>
         <li>Lignin - mass percent of total lignin, dry ash-free basis</li>
       </ul>
-
-      <h3>Optimize splitting parameters</h3>
-
-      <p>
-        When the Optimize splitting parameters checkbox is enabled, the chemical analysis values are
-        used for the biomass characterization. This will adjust the splitting parameters so the Y
-        (daf) results match the given cellulose, hemicellulose, and total lignin values. If the
-        checkbox is not selected, the chemical analysis values are ignored.
-      </p>
 
       <h3>Splitting parameters</h3>
 
