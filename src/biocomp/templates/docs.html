@@ -96,7 +96,7 @@
       <img
         src="{{ url_for('static', filename='ult-analysis.png') }}"
         class="figure-img img-fluid rounded shadow"
-        style="max-width: 300px; margin-bottom: 1.5rem"
+        style="margin-bottom: 1.5rem; max-width: min(100%, 300px);"
         alt="ultimate analysis" />
 
       <ul>
@@ -120,7 +120,7 @@
       <img
         src="{{ url_for('static', filename='chem-analysis.png') }}"
         class="figure-img img-fluid rounded shadow"
-        style="max-width: 300px; margin-bottom: 1.5rem"
+        style="margin-bottom: 1.5rem; max-width: min(100%, 300px);"
         alt="chemical analysis" />
 
       <ul>
@@ -137,6 +137,12 @@
         outside the reference mixture region.
       </p>
 
+      <img
+        src="{{ url_for('static', filename='split-params.png') }}"
+        class="figure-img img-fluid rounded shadow"
+        style="margin-bottom: 1.5rem; max-width: min(100%, 300px);"
+        alt="splitting parameters" />
+
       <ul>
         <li>α - molar ratio of cellulose and hemicellulose</li>
         <li>β - molar ratio of lignin LIG-O and lignin LIG-C</li>
@@ -149,9 +155,34 @@
 
       <p>
         Submit the parameters to view results in the biomass composition table and characterization
-        graph. The table provides results as mole fractions (X) and mass fractions (Y) where daf is
-        the dry ash-free basis, wet is the wet basis, and wetash is the wet-ash basis.
+        graph. The rows in the table represent the biomass composition as cellulose (CELL),
+        hemicellulose (HEMI), carbon-rich lignin (LIG-C), hydrogen-rich lignin (LIG-H), oxygen-rich
+        lignin (LIG-O), tannin (TANN), and triglycerides (TGL). The table provides results as mole
+        fractions (X) and mass fractions (Y) where daf is the dry ash-free basis, wet is the wet
+        basis, and wetash is the wet-ash basis. The values of the splitting parameters used for the
+        characterization are displayed above the table. When the chemical analysis parameters are
+        used, the splitting parameter values displayed above the table are the values determined
+        from the optimization procedure.
       </p>
+
+      <img
+        src="{{ url_for('static', filename='biomass-table.png') }}"
+        class="img-fluid rounded shadow"
+        style="margin-bottom: 1.5rem; max-width: min(100%, 600px);"
+        alt="biomass composition table" />
+
+      <p>
+        The characterization graph displays the biomass C/H ratio as a red cross marker. The marker
+        compares the biomass to the reference mixtures which are represented by the corners of the
+        Reference Region. If the biomass marker is outside the Reference Region, then the splitting
+        parameters need to be adjusted until the marker is within the Reference Region.
+      </p>
+
+      <img
+        src="{{ url_for('static', filename='biomass-graph.png') }}"
+        class="img-fluid rounded shadow"
+        style="margin-bottom: 1rem; max-width: min(100%, 600px);"
+        alt="biomass composition graph" />
 
       <h2 class="mt-4">References</h2>
 
