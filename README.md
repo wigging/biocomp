@@ -23,7 +23,7 @@ uv run quart --app biocomp.app run
 
 ## Documentation
 
-See the About and Usage pages in the BioComp app for documentation.
+See the [Docs page](https://biocomp.gavinw.me/docs) for instructions on how to use BioComp and interpret the results.
 
 ## Citation
 
