@@ -4,15 +4,14 @@
   data-yh="{{ yh | tojson }}"
   data-rm1="{{ bc['y_rm1'] | tojson }}"
   data-rm2="{{ bc['y_rm2'] | tojson }}"
-  data-rm3="{{ bc['y_rm3'] | tojson }}"
->
+  data-rm3="{{ bc['y_rm3'] | tojson }}">
   <p>
     Using splitting parameters:<br />
-    α = {{ splits[0] }}, β = {{ splits[1] }}, γ = {{ splits[2] }}, δ = {{
-    splits[3] }}, and ε = {{ splits[4] }}
+    α = {{ splits[0] }}, β = {{ splits[1] }}, γ = {{ splits[2] }}, δ = {{ splits[3] }}, and ε = {{
+    splits[4] }}
   </p>
 
-  <table class="table">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Biomass</th>
@@ -83,5 +82,7 @@
     </tbody>
   </table>
 
-  <div id="graph" style="max-width: 600px" hx-preserve></div>
+  <div style="max-width: 600px; overflow: hidden;" class="border rounded">
+    <div id="graph" style="max-width: 600px;" hx-preserve></div>
+  </div>
 </div>

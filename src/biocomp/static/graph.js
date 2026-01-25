@@ -63,10 +63,10 @@ function newGraph(yc, yh, rm1, rm2, rm3) {
       },
     },
     margin: {
-      b: 40,
-      l: 70,
-      r: 0,
-      t: 20,
+      b: 70,
+      l: 80,
+      r: 20,
+      t: 30,
     },
     legend: {
       x: 0.05,
